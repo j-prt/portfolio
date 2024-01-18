@@ -2,12 +2,15 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
+  position: absolute;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 2rem;
   border-bottom: 1px solid #000;
+  color: transparent;
 `
 const NavList = styled.ul`
   display: flex;
@@ -32,7 +35,7 @@ function Header() {
           <Link to={'projects'}>Projects</Link>
         </NavItem>
         <NavItem>
-          <Link to={'Contact'}>contact</Link>
+          <Link to={'contact'}>Contact</Link>
         </NavItem>
       </NavList>
     </StyledHeader>
