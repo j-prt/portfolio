@@ -13,6 +13,12 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
 }
+
+*:link,
+*:visited {
+    text-decoration: none;
+    color: #000
+}
 `
 
 // :root {
