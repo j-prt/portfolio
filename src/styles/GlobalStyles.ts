@@ -3,6 +3,18 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyles = createGlobalStyle`
 
 :root {
+--color-black: #191A19;
+
+--color-main: #1E5128;
+--color-main-med: #123118;
+--color-main-dark: #09180c;
+
+--color-secondary: #4E9F3D;
+
+--color-accent: #D8E9A8;
+--color-accent-light: #e4f0c2;
+--color-accent-lighter: #e8f2cb;
+--color-accent-dark: #97a376;
 
 }
 
@@ -17,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
 *:link,
 *:visited {
     text-decoration: none;
-    color: #000
+    color: inherit;
 }
 `
 
