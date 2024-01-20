@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 const HeroContainer = styled.div`
   height: 100vh;
-  /* background-color: var(--color-main-dark); */
-  /* background-image: linear-gradient(var(--color-main-med), var(--color-main-dark)); */
   background-image: radial-gradient(
     farthest-corner at 5% 70%,
     var(--color-main-med),
@@ -18,8 +16,6 @@ const HeroBox = styled.div`
   margin: auto;
   padding: 1rem 2rem;
   display: flex;
-  /* justify-content: space-between; */
-  /* background-color: var(--color-secondary); */
 `
 
 const ProfileBox = styled.div`
@@ -31,7 +27,6 @@ const ProfileBox = styled.div`
 
 const Img = styled.div`
   grid-column: 1/3;
-  display: block;
   width: 100%;
   height: 16rem;
   border-radius: 8px;
@@ -53,7 +48,6 @@ const About = styled.div`
 const H1 = styled.h1`
   grid-column: 2 / 4;
   font-size: 4.5rem;
-  /* align-self: center; */
   font-family: 'Prompt', sans-serif;
   font-family: 'IBM Plex Sans', sans-serif;
   font-family: 'Zilla Slab', serif;
