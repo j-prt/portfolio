@@ -16,6 +16,9 @@ export const GlobalStyles = createGlobalStyle`
 --color-accent-lighter: #e8f2cb;
 --color-accent-dark: #97a376;
 
+--text-accent-light: #eff6dc;
+--text-accent-dark: #161711;
+
 }
 
 *,

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Button from '../ui/Button'
 
 const HeroContainer = styled.div`
   height: 100vh;
@@ -109,8 +110,12 @@ function Home() {
             porro suscipit, delectus illo, soluta molestias.
           </AboutText>
           <CTABox>
-            <button>CTA</button>
-            <button>Learn more</button>
+            <Button onPress={() => {}} styleType='primary'>
+              Contact
+            </Button>
+            <Button onPress={() => {}} styleType='secondary'>
+              Learn More
+            </Button>
           </CTABox>
         </About>
       </HeroBox>
