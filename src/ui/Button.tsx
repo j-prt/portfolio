@@ -1,14 +1,13 @@
 import styled, { css } from 'styled-components'
 import React from 'react'
 
-type ButtonProps = {
-  children: React.ReactNode
-  onPress: () => void
+interface StyleProps {
   styleType: 'primary' | 'secondary'
 }
 
-type StyleProps = {
-  styleType: 'primary' | 'secondary'
+interface ButtonProps extends StyleProps {
+  children: React.ReactNode
+  onPress: () => void
 }
 
 const variations = {

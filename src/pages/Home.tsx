@@ -30,7 +30,7 @@ const Img = styled.div`
   grid-column: 1/3;
   width: 100%;
   height: 16rem;
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
   background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
     url('./public/cat3.jpg');
   background-size: cover;
