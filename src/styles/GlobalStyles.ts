@@ -19,6 +19,9 @@ export const GlobalStyles = createGlobalStyle`
 --text-accent-light: #eff6dc;
 --text-accent-dark: #161711;
 
+--border-radius-md: 8px;
+--border-radius-sm: 4px;
+
 }
 
 *,

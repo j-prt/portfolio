@@ -89,7 +89,7 @@ const AboutText = styled.p`
 
 const CTABox = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: 0.8rem;
 `
 
 function Home() {

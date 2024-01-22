@@ -19,14 +19,23 @@ const variations = {
   secondary: css`
     background-color: transparent;
     color: var(--color-accent);
+    border: 1px solid var(--color-accent);
   `,
 }
 
 const StyledButton = styled.button<StyleProps>`
   padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-family: 'Chakra Petch', sans-serif;
-  ${props => variations[props.styleType]}
+  border-radius: var(--border-radius-sm);
+  border: none;
+  transition: all 0.3s;
+  ${props => variations[props.styleType]};
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0rem 0rem 0.5rem var(--color-accent);
+  }
 `
 
 function Button({ children, onPress, styleType }: ButtonProps) {
