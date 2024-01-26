@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from '../ui/Button'
+import Button from '../../ui/Button'
 
 const HeroContainer = styled.div`
   height: 100vh;
@@ -92,7 +92,7 @@ const CTABox = styled.div`
   gap: 0.8rem;
 `
 
-function Home() {
+function Hero() {
   return (
     <HeroContainer>
       <HeroBox>
@@ -123,4 +123,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Hero
