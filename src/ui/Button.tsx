@@ -25,7 +25,6 @@ const variations = {
 const StyledButton = styled.button<StyleProps>`
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
-  font-family: 'Chakra Petch', sans-serif;
   border-radius: var(--border-radius-sm);
   border: none;
   transition: all 0.3s;

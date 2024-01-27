@@ -37,6 +37,15 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit;
 }
+
+body {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 300;
+}
+
+button {
+  font-family: 'Chakra Petch', sans-serif;
+}
 `
 
 // :root {

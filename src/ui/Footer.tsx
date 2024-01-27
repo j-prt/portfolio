@@ -4,11 +4,11 @@ import IconButton from './IconButton'
 const StyledFooter = styled.footer`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 5rem;
-  padding: 2rem 4rem;
-  gap: 4rem;
+  padding: 2rem 5rem;
+  gap: 3rem;
   background-color: #777;
 `
 

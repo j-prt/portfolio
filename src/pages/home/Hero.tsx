@@ -49,8 +49,6 @@ const About = styled.div`
 const H1 = styled.h1`
   grid-column: 2 / 4;
   font-size: 4.5rem;
-  font-family: 'Prompt', sans-serif;
-  font-family: 'IBM Plex Sans', sans-serif;
   font-family: 'Zilla Slab', serif;
   font-weight: 600;
   font-style: italic;
@@ -63,14 +61,12 @@ const H1 = styled.h1`
 const H2 = styled.p`
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  font-family: 'Chakra Petch', sans-serif;
   font-weight: 500;
   color: var(--color-accent);
 `
 
 const H3 = styled.p`
   font-size: 0.8rem;
-  font-family: 'Chakra Petch', sans-serif;
   font-weight: 300;
   letter-spacing: 4.5px;
   color: var(--color-accent-dark);
@@ -82,8 +78,6 @@ const AboutText = styled.p`
   max-width: 20rem;
   margin-left: 3rem;
   margin-bottom: 1rem;
-  font-family: 'Chakra Petch', sans-serif;
-  font-weight: 300;
   color: var(--color-accent);
 `
 

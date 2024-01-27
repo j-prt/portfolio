@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { URLS } from '../utils/constants'
 
 interface IconProps {
   portal: 'github' | 'linkedin'
@@ -8,7 +9,7 @@ const StyledIconButton = styled.a``
 
 function IconButton({ portal }: IconProps) {
   return (
-    <StyledIconButton>
+    <StyledIconButton href={URLS[portal]}>
       {portal == 'github' && (
         <svg
           stroke='currentColor'
