@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   align-items: center;
   height: 5rem;
   padding: 2rem 5rem;
-  gap: 3rem;
+  gap: 1.5rem;
   background-color: #777;
 `
 
@@ -21,10 +21,19 @@ const ExternalMedia = styled.div`
   gap: 1rem;
 `
 
+const Copyright = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 function Footer() {
   return (
     <StyledFooter>
-      <FooterText>&copy; Joseph Peart.</FooterText>
+      <Copyright>
+        <FooterText>&copy; Joseph Peart {new Date().getFullYear()}</FooterText>
+        {/* <FooterText>{new Date().getFullYear()}</FooterText> */}
+      </Copyright>
       <ExternalMedia>
         <IconButton portal='github' />
         <IconButton portal='linkedin' />

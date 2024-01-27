@@ -104,10 +104,10 @@ function Hero() {
             porro suscipit, delectus illo, soluta molestias.
           </AboutText>
           <CTABox>
-            <Button onPress={() => {}} styleType='primary'>
+            <Button onPress={() => {}} $styleType='primary'>
               Contact
             </Button>
-            <Button onPress={() => {}} styleType='secondary'>
+            <Button onPress={() => {}} $styleType='secondary'>
               Learn More
             </Button>
           </CTABox>

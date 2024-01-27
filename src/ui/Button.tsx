@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import React from 'react'
 
 interface StyleProps {
-  styleType: 'primary' | 'secondary'
+  $styleType: 'primary' | 'secondary'
 }
 
 interface ButtonProps extends StyleProps {
@@ -28,7 +28,7 @@ const StyledButton = styled.button<StyleProps>`
   border-radius: var(--border-radius-sm);
   border: none;
   transition: all 0.3s;
-  ${props => variations[props.styleType]};
+  ${props => variations[props.$styleType]};
 
   &:hover {
     transform: scale(1.05);
@@ -36,9 +36,9 @@ const StyledButton = styled.button<StyleProps>`
   }
 `
 
-function Button({ children, onPress, styleType }: ButtonProps) {
+function Button({ children, onPress, $styleType }: ButtonProps) {
   return (
-    <StyledButton onClick={onPress} styleType={styleType}>
+    <StyledButton onClick={onPress} $styleType={$styleType}>
       {children}
     </StyledButton>
   )

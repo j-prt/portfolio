@@ -38,6 +38,18 @@ export const GlobalStyles = createGlobalStyle`
     color: inherit;
 }
 
+@keyframes glow {
+      0% {
+        color: #000;
+      }
+      50% {
+        color: var(--color-accent);
+      }
+      100% {
+        color: #000;
+      }
+    }
+
 body {
   font-family: 'Chakra Petch', sans-serif;
   font-weight: 300;

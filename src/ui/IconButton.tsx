@@ -5,7 +5,14 @@ interface IconProps {
   portal: 'github' | 'linkedin'
 }
 
-const StyledIconButton = styled.a``
+const StyledIconButton = styled.a`
+  font-size: 0rem;
+  transition: all 1.2s ease-in-out;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+`
 
 function IconButton({ portal }: IconProps) {
   return (
