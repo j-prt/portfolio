@@ -4,10 +4,11 @@ import IconButton from './IconButton'
 const StyledFooter = styled.footer`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: 6rem;
+  height: 5rem;
   padding: 2rem 4rem;
+  gap: 4rem;
   background-color: #777;
 `
 
@@ -17,7 +18,7 @@ const FooterText = styled.p`
 
 const ExternalMedia = styled.div`
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 `
 
 function Footer() {
