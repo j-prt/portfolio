@@ -2,14 +2,17 @@ import styled from 'styled-components'
 import IconButton from './IconButton'
 
 const StyledFooter = styled.footer`
+  position: absolute;
+  bottom: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   height: 5rem;
+  width: 100%;
   padding: 2rem 5rem;
   gap: 1.5rem;
-  background-color: #777;
+  background-color: transparent;
 `
 
 const FooterText = styled.p`
@@ -18,6 +21,7 @@ const FooterText = styled.p`
 
 const ExternalMedia = styled.div`
   display: flex;
+  color: var(--color-accent-dark);
   gap: 1rem;
 `
 

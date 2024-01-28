@@ -1,16 +1,21 @@
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
+import Footer from './Footer'
+import styled from 'styled-components'
+
+const StyledAppLayout = styled.div`
+  position: relative;
+`
 
 function AppLayout() {
   return (
-    <>
-      <div>
-        <Header />
-      </div>
-      <div>
-        <Outlet />
-      </div>
-    </>
+    <StyledAppLayout>
+      <Header />
+
+      <Outlet />
+
+      <Footer />
+    </StyledAppLayout>
   )
 }
 

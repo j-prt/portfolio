@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   padding: 1.5rem 2rem; */
   /* border-bottom: 1px solid #000; */
-  color: transparent;
+  background-color: transparent;
 `
 
 const HeaderContainer = styled.div`
