@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Button from '../../ui/Button'
 
-const HeroContainer = styled.div`
+const HeroContainer = styled.main`
   height: 100vh;
   background-image: radial-gradient(
     farthest-corner at 5% 70%,
