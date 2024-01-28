@@ -11,6 +11,7 @@ const StyledHeader = styled.header`
   padding: 1.5rem 2rem; */
   /* border-bottom: 1px solid #000; */
   background-color: transparent;
+  color: var(--color-accent);
 `
 
 const HeaderContainer = styled.div`
@@ -23,8 +24,7 @@ const HeaderContainer = styled.div`
   margin: 0 auto;
 `
 
-const Logo = styled.div`
-  color: var(--color-accent);
+const Logo = styled(Link)`
   font-family: 'Train One';
   font-size: 1.5rem;
 `
@@ -33,23 +33,20 @@ const NavList = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   gap: 1.5rem;
-  /* padding: 2rem 4rem; */
   margin: 0;
-  /* background-color: #fff; */
 `
 
 const NavItem = styled.li`
   list-style: none;
   font-family: 'Chakra Petch', sans-serif;
   font-weight: 300;
-  color: var(--color-accent);
 `
 
 function Header() {
   return (
     <StyledHeader>
       <HeaderContainer>
-        <Logo>JP</Logo>
+        <Logo to='/'>JP</Logo>
         <NavList>
           <NavItem>
             <Link to={'blog'}>Blog</Link>

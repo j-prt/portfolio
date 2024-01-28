@@ -11,9 +11,7 @@ function AppLayout() {
   return (
     <StyledAppLayout>
       <Header />
-
       <Outlet />
-
       <Footer />
     </StyledAppLayout>
   )
