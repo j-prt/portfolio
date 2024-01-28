@@ -13,7 +13,7 @@ interface ButtonProps extends StyleProps {
 const variations = {
   primary: css`
     background-color: var(--color-accent);
-    color: var(--text-accent-dark);
+    color: var(--color-accent-darkest);
   `,
   secondary: css`
     background-color: transparent;

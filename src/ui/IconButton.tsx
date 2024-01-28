@@ -8,6 +8,7 @@ interface IconProps {
 const StyledIconButton = styled.a`
   font-size: 0rem;
   transition: all 1.2s ease-in-out;
+  color: var(--color-accent-darkest);
 
   &:hover {
     color: var(--color-accent);
@@ -16,7 +17,7 @@ const StyledIconButton = styled.a`
 
 function IconButton({ portal }: IconProps) {
   return (
-    <StyledIconButton href={URLS[portal]}>
+    <StyledIconButton href={URLS[portal]} target='_blank'>
       {portal == 'github' && (
         <svg
           stroke='currentColor'
