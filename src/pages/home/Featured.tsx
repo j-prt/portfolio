@@ -3,14 +3,12 @@ import BlogMini from './BlogMini'
 import ProjectMini from './ProjectMini'
 
 const StyledFeatured = styled.section`
-  height: 50rem;
-  /* background-color: var(--color-secondary); */
+  height: 100rem;
   background-image: linear-gradient(
-    var(--color-main-dark) 5%,
-    var(--color-secondary-med) 10%,
-    var(--color-secondary-lighter) 50%,
-    var(--color-secondary-med),
-    var(--color-main-dark) 95%
+    var(--color-accent-light),
+    var(--color-blue) 20%,
+    var(--color-blue) 80%,
+    var(--color-accent-light)
   );
 `
 

@@ -15,13 +15,17 @@ export const GlobalStyles = createGlobalStyle`
 --color-secondary-light: #83bc77;
 --color-secondary-lighter: #b8d9b1;
 
-
-
 --color-accent: #D8E9A8;
 --color-accent-light: #e4f0c2;
 --color-accent-lighter: #e8f2cb;
 --color-accent-dark: #97a376;
 --color-accent-darkest: #161711;
+
+--color-purple: #8377a4;
+--color-blue: #281E51;
+--color-blue-rgb: rgb(40, 30, 81);
+--color-blue-med: #1c1539;
+--color-blue-med-rgb: rgb(28, 21, 57);
 
 
 --border-radius-md: 8px;
