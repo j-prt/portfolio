@@ -3,19 +3,27 @@ import BlogMini from './BlogMini'
 import ProjectMini from './ProjectMini'
 
 const StyledFeatured = styled.section`
-  height: 100rem;
+  height: 120rem;
   background-image: linear-gradient(
     var(--color-accent-light),
-    var(--color-blue) 20%,
-    var(--color-blue) 80%,
+    var(--color-blue) 15%,
+    var(--color-blue) 85%,
     var(--color-accent-light)
   );
 `
 
 const FeatureBox = styled.div`
   max-width: 70rem;
-  padding: 2rem 4rem;
+  padding: 20rem 4rem;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+
+const Rule = styled.div`
+  margin: 4rem 2rem;
+  border-bottom: 1px solid rgba(228, 240, 194, 0.7); // color-accent-light
+  box-shadow: 0rem 0rem 2.5rem 0.2rem var(--color-accent);
 `
 
 // TODOS: build blogmini and projectmini components. I'm thinking
@@ -26,6 +34,7 @@ function Featured() {
     <StyledFeatured>
       <FeatureBox>
         <BlogMini />
+        <Rule />
         <ProjectMini />
       </FeatureBox>
     </StyledFeatured>
