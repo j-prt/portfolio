@@ -1,38 +1,15 @@
 import styled from 'styled-components'
+import Button from '../../ui/Button'
+import ButtonBox from '../../ui/ButtonBox'
 
 const StyledBlogMini = styled.div`
   height: 35rem;
-  /* box-shadow: 0.3rem 0.3rem 0rem 0.3rem var(--color-accent),
-    -0.3rem -0.3rem 0rem 0.3rem var(--color-accent); */
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 
-  &::before {
-    /* content: '';
-    position: absolute;
-    inset: 0px;
-    border: 0.8rem solid;
-    border-image: linear-gradient(-25deg, var(--color-accent) 20%, #0000 80%, var(--color-accent) 0)
-      10; */
-
-    /* content: '';
-    position: absolute;
-    inset: -10px;
-    border: 0.8rem solid #0000;
-    border-image: linear-gradient(
-        -45deg,
-        var(--color-accent) 20%,
-        #0000 0 80%,
-        var(--color-accent) 0
-      )
-      10; */
-  }
-
-  &::after {
-  }
-
+  // dashed border
   /* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23D8E9A8FF' stroke-width='4' stroke-dasharray='15%2c 15%2c 1' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); */
 `
 
@@ -52,27 +29,65 @@ const CopyBox = styled.div`
 `
 
 const H1 = styled.h1`
-  grid-column: 2 / 4;
+  color: var(--color-blue-med);
+  position: relative;
   font-size: 4.5rem;
   font-family: 'Zilla Slab', serif;
   font-weight: 600;
   font-style: italic;
-  letter-spacing: 3.5px;
-  line-height: 0.8;
-  color: var(--color-accent);
-  text-shadow: 0 2.4rem 3.2rem rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
   z-index: 1;
+  margin-bottom: 2rem;
+
+  // Background effect
+  &::after {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(var(--color-accent), var(--color-accent));
+    transform: translateY(5px) skew(-8deg, -1.5deg) scale(1.15);
+    border-radius: var(--border-radius-sm);
+  }
+`
+
+const BlogTitle = styled.p`
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 4.5px;
+  color: var(--color-accent-dark);
+
+  margin-bottom: 1.5rem;
+`
+
+const CopyText = styled.p`
+  max-width: 20rem;
+  color: var(--color-accent);
 `
 
 function BlogMini() {
   return (
     <StyledBlogMini>
       <CopyBox>
-        <H1>
-          Featured
-          <br />
-          Blog
-        </H1>
+        <H1>Featured Blog</H1>
+        <BlogTitle>Title of blogpost featured</BlogTitle>
+        <CopyText>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem exercitationem quod harum
+          dolores nostrum sapiente quis asperiores aliquam non qui? Dolorum ipsum maxime facilis
+          nulla, ex officiis. Reiciendis, ab ut!
+        </CopyText>
+        <ButtonBox>
+          <Button onPress={() => {}} $styleType='primary'>
+            Contact
+          </Button>
+          <Button onPress={() => {}} $styleType='secondary'>
+            Learn More
+          </Button>
+        </ButtonBox>
       </CopyBox>
       <BlogImg />
     </StyledBlogMini>

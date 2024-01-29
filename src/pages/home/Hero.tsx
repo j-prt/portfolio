@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Button from '../../ui/Button'
+import ButtonBox from '../../ui/ButtonBox'
 
 const HeroContainer = styled.main`
   height: 100vh;
@@ -81,11 +82,6 @@ const AboutText = styled.p`
   color: var(--color-accent);
 `
 
-const CTABox = styled.div`
-  display: flex;
-  gap: 0.8rem;
-`
-
 function Hero() {
   return (
     <HeroContainer>
@@ -103,14 +99,14 @@ function Hero() {
             perferendis recusandae saepe accusamus quam ratione possimus earum ducimus, ipsam velit
             porro suscipit, delectus illo, soluta molestias.
           </AboutText>
-          <CTABox>
+          <ButtonBox>
             <Button onPress={() => {}} $styleType='primary'>
               Contact
             </Button>
             <Button onPress={() => {}} $styleType='secondary'>
               Learn More
             </Button>
-          </CTABox>
+          </ButtonBox>
         </About>
       </HeroBox>
     </HeroContainer>

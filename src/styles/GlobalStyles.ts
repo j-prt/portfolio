@@ -21,7 +21,6 @@ export const GlobalStyles = createGlobalStyle`
 --color-accent-dark: #97a376;
 --color-accent-darkest: #161711;
 
---color-purple: #8377a4;
 --color-blue: #281E51;
 --color-blue-rgb: rgb(40, 30, 81);
 --color-blue-med: #1c1539;
