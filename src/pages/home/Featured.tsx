@@ -2,19 +2,23 @@ import styled from 'styled-components'
 import BlogMini from './BlogMini'
 import ProjectMini from './ProjectMini'
 
+// const StyledFeatured = styled.section`
+//   height: 120rem;
+//   background-image: linear-gradient(
+//     var(--color-accent-light),
+//     var(--color-blue) 15%,
+//     var(--color-blue) 85%,
+//     var(--color-accent-light)
+//   );
+// `
+
 const StyledFeatured = styled.section`
-  height: 120rem;
-  background-image: linear-gradient(
-    var(--color-accent-light),
-    var(--color-blue) 15%,
-    var(--color-blue) 85%,
-    var(--color-accent-light)
-  );
+  background-color: var(--color-blue);
 `
 
 const FeatureBox = styled.div`
   max-width: 70rem;
-  padding: 20rem 2rem;
+  padding: 10rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,14 +26,11 @@ const FeatureBox = styled.div`
 `
 
 const Rule = styled.div`
-  margin: 4rem 2rem;
+  margin: 4rem 6rem;
   border-bottom: 1px solid rgba(228, 240, 194, 0.7); // color-accent-light
   box-shadow: 0rem 0rem 2.5rem 0.2rem var(--color-accent);
 `
 
-// TODOS: build blogmini and projectmini components. I'm thinking
-// they be styled as cards, side by side (vertical in mobile view)
-// with a short summary of the featured blogposts and projects
 function Featured() {
   return (
     <StyledFeatured>

@@ -1,18 +1,7 @@
 import styled from 'styled-components'
 import Button from '../../ui/Button'
 import ButtonBox from '../../ui/ButtonBox'
-
-const StyledBlogMini = styled.div`
-  height: 35rem;
-  padding: 0 4rem;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  // dashed border
-  /* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23D8E9A8FF' stroke-width='4' stroke-dasharray='15%2c 15%2c 1' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); */
-`
+import FeaturedContainer from '../../ui/FeaturedContainer'
 
 const BlogImg = styled.div`
   height: 26rem;
@@ -76,7 +65,7 @@ const CopyText = styled.p`
 
 function BlogMini() {
   return (
-    <StyledBlogMini>
+    <FeaturedContainer>
       <CopyBox>
         <H1>Featured Blog</H1>
         <BlogTitle>Title of blogpost featured</BlogTitle>
@@ -97,7 +86,7 @@ function BlogMini() {
         </ButtonBox>
       </CopyBox>
       <BlogImg />
-    </StyledBlogMini>
+    </FeaturedContainer>
   )
 }
 
