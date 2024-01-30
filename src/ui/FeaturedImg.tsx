@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 interface SFIProps {
   side: 'right' | 'left'
+  brightness: 'medium' | 'dark'
   imgUrl: string
 }
 
@@ -15,10 +16,15 @@ const sides = {
   `,
 }
 
+const levels = {
+  dark: 'rgba(40, 30, 81, 0.55), rgba(40, 30, 81, 0.55)',
+  medium: 'rgba(40, 30, 81, 0.45), rgba(40, 30, 81, 0.45)',
+}
+
 const FeaturedImg = styled.div<SFIProps>`
   height: 26rem;
   width: 18rem;
-  background-image: linear-gradient(rgba(40, 30, 81, 0.55), rgba(40, 30, 81, 0.55)),
+  background-image: linear-gradient(${props => levels[props.brightness]}),
     url(${props => props.imgUrl});
   background-size: cover;
   background-position: center;
