@@ -14,7 +14,7 @@ const StyledFeatured = styled.section`
 
 const FeatureBox = styled.div`
   max-width: 70rem;
-  padding: 20rem 4rem;
+  padding: 20rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
