@@ -7,7 +7,7 @@ const StyledFeatured = styled.section`
 `
 
 const FeatureBox = styled.div`
-  max-width: 70rem;
+  max-width: var(--home-max-width);
   padding: 10rem 2rem;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ const FeatureBox = styled.div`
 const Rule = styled.div`
   margin: 6rem 6rem;
   border-bottom: 1px solid rgba(228, 240, 194, 0.7); // color-accent-light
-  box-shadow: 0rem 0rem 2.5rem 0.2rem var(--color-accent);
+  box-shadow: 0rem 0rem 3rem 0.15rem var(--color-accent);
 `
 
 function Featured() {

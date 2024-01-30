@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 --color-main-med: #123118;
 --color-main-med-rgb: rgb(18, 49, 24);
 --color-main-dark: #09180c;
+--color-main-dark-rgb: rgb(9, 24, 12);
 
 --color-secondary: #4E9F3D;
 --color-secondary-dark: #2f5f25;
@@ -31,6 +32,11 @@ export const GlobalStyles = createGlobalStyle`
 --border-radius-md: 8px;
 --border-radius-sm: 4px;
 --border-radius-xs: 2px;
+
+
+// Paddings, margins, predefined widths
+--home-max-width: 70rem;
+--home-padding: 2rem 4rem;
 
 }
 

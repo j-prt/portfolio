@@ -13,7 +13,7 @@ const HeroContainer = styled.main`
 `
 
 const HeroBox = styled.div`
-  max-width: 70rem;
+  max-width: var(--home-max-width);
   height: 90%;
   margin: auto;
   padding: 1rem 2rem;
