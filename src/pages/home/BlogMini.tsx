@@ -4,9 +4,10 @@ import ButtonBox from '../../ui/ButtonBox'
 
 const StyledBlogMini = styled.div`
   height: 35rem;
+  padding: 0 4rem;
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 
   // dashed border
@@ -25,7 +26,10 @@ const BlogImg = styled.div`
 `
 
 const CopyBox = styled.div`
-  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 `
 
 const H1 = styled.h1`
@@ -38,9 +42,9 @@ const H1 = styled.h1`
   letter-spacing: 0.5px;
   line-height: 1.2;
   z-index: 1;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
-  // Background effect
+  // Background highlighter effect
   &::after {
     position: absolute;
     content: '';
@@ -56,12 +60,10 @@ const H1 = styled.h1`
 `
 
 const BlogTitle = styled.p`
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   font-weight: 300;
-  letter-spacing: 4.5px;
+  letter-spacing: 4px;
   color: var(--color-accent-dark);
-
-  margin-bottom: 1.5rem;
 `
 
 const CopyText = styled.p`
@@ -78,14 +80,14 @@ function BlogMini() {
         <CopyText>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem exercitationem quod harum
           dolores nostrum sapiente quis asperiores aliquam non qui? Dolorum ipsum maxime facilis
-          nulla, ex officiis. Reiciendis, ab ut!
+          nulla, ex officiis.
         </CopyText>
         <ButtonBox>
           <Button onPress={() => {}} $styleType='primary'>
-            Contact
+            Read On
           </Button>
           <Button onPress={() => {}} $styleType='secondary'>
-            Learn More
+            All Posts
           </Button>
         </ButtonBox>
       </CopyBox>

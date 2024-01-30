@@ -18,6 +18,7 @@ const FeatureBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0 auto;
 `
 
 const Rule = styled.div`
