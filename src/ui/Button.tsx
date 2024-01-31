@@ -2,12 +2,14 @@ import styled, { css } from 'styled-components'
 import React from 'react'
 
 interface StyleProps {
-  $styleType: 'primary' | 'secondary'
+  $styleType?: 'primary' | 'secondary'
+  hoverEffect?: 'glow' | 'simple'
+  size?: 'medium' | 'large'
 }
 
 interface ButtonProps extends StyleProps {
   children: React.ReactNode
-  onPress: () => void
+  onPress: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 const variations = {
@@ -22,23 +24,46 @@ const variations = {
   `,
 }
 
+const hoverEffect = {
+  glow: css`
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0rem 0rem 0.5rem var(--color-accent);
+    }
+  `,
+  simple: css`
+    &:hover {
+      box-shadow: 0rem 0rem 0.4rem var(--color-accent);
+    }
+  `,
+}
+
+const sizes = {
+  medium: css`
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+  `,
+  large: css`
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    width: 50%;
+    align-self: center;
+  `,
+}
+
 const StyledButton = styled.button<StyleProps>`
-  padding: 0.5rem 1rem;
-  font-size: 1.1rem;
   border-radius: var(--border-radius-sm);
   border: none;
   transition: all 0.3s;
-  ${props => variations[props.$styleType]};
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0rem 0rem 0.5rem var(--color-accent);
-  }
+  ${props => sizes[props.size || 'medium']};
+  ${props => variations[props.$styleType || 'primary']};
+  ${props => hoverEffect[props.hoverEffect || 'glow']};
 `
 
-function Button({ children, onPress, $styleType }: ButtonProps) {
+function Button({ children, onPress, $styleType, hoverEffect, size }: ButtonProps) {
   return (
-    <StyledButton onClick={onPress} $styleType={$styleType}>
+    <StyledButton onClick={onPress} $styleType={$styleType} hoverEffect={hoverEffect} size={size}>
       {children}
     </StyledButton>
   )

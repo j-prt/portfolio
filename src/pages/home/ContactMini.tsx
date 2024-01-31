@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Button from '../../ui/Button'
 
 const StyledContactMini = styled.section`
-  height: 50rem;
+  height: 70rem;
   background-image: radial-gradient(
     farthest-corner at 25% 5%,
     var(--color-main-med),
@@ -92,11 +92,24 @@ const Input = styled.input`
 `
 
 const TextArea = styled.textarea`
-  background-color: var(--color-main-white);
+  background-color: var(--color-main-lightest);
   border-radius: var(--border-radius-xs);
   height: 12rem;
   border: none;
 `
+// const FormButton = styled.button`
+//   padding: 0.5rem 1rem;
+//   font-size: 1.1rem;
+//   border-radius: var(--border-radius-sm);
+//   border: none;
+//   transition: all 0.3s;
+//   background-color: var(--color-accent);
+//   color: var(--color-accent-darkest);
+//   border: 1px solid var(--color-accent);
+//   width: 50%;
+//   align-self: center;
+// `
+
 function ContactMini() {
   return (
     <StyledContactMini>
@@ -127,7 +140,13 @@ function ContactMini() {
             <Label>What&apos;s up?</Label>
             <TextArea />
           </FormRow>
-          <Button $styleType='primary' onPress={() => {}}>
+          <Button
+            onPress={e => {
+              e.preventDefault()
+            }}
+            size='large'
+            hoverEffect='simple'
+          >
             Submit
           </Button>
         </ContactForm>
