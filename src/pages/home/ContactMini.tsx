@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Button from '../../ui/Button'
 
 const StyledContactMini = styled.section`
-  height: 70rem;
+  height: 60rem;
   background-image: radial-gradient(
     farthest-corner at 25% 5%,
     var(--color-main-med),
@@ -13,7 +13,7 @@ const StyledContactMini = styled.section`
 
 const ContactContainer = styled.div`
   max-width: var(--home-max-width);
-  padding: 4rem 2rem;
+  padding: 12rem 2rem;
   margin: 0 auto;
   gap: 1.5rem;
 

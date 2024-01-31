@@ -37,7 +37,7 @@ export const GlobalStyles = createGlobalStyle`
 
 
 // Paddings, margins, predefined widths
---home-max-width: 70rem;
+--home-max-width: 80rem;
 --home-padding: 2rem 4rem;
 
 }

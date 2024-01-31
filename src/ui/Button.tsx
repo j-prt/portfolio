@@ -26,15 +26,11 @@ const variations = {
 
 const hoverEffect = {
   glow: css`
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: 0rem 0rem 0.5rem var(--color-accent);
-    }
+    transform: scale(1.05);
+    box-shadow: 0rem 0rem 0.5rem var(--color-accent);
   `,
   simple: css`
-    &:hover {
-      box-shadow: 0rem 0rem 0.4rem var(--color-accent);
-    }
+    box-shadow: 0rem 0rem 0.4rem var(--color-accent);
   `,
 }
 
@@ -45,7 +41,7 @@ const sizes = {
   `,
   large: css`
     padding: 0.5rem 1rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
     width: 50%;
     align-self: center;
@@ -58,7 +54,9 @@ const StyledButton = styled.button<StyleProps>`
   transition: all 0.3s;
   ${props => sizes[props.size || 'medium']};
   ${props => variations[props.$styleType || 'primary']};
-  ${props => hoverEffect[props.hoverEffect || 'glow']};
+  &:hover {
+    ${props => hoverEffect[props.hoverEffect || 'glow']};
+  }
 `
 
 function Button({ children, onPress, $styleType, hoverEffect, size }: ButtonProps) {
