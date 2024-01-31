@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import Button from '../../ui/Button'
 
 const StyledContactMini = styled.section`
-  height: 30rem;
+  height: 50rem;
   background-image: radial-gradient(
     farthest-corner at 25% 5%,
     var(--color-main-med),
@@ -44,23 +45,58 @@ const ContactAbout = styled.p`
 `
 
 const ContactForm = styled.form`
-  height: 20rem;
-  width: 30rem;
-  padding: 1rem;
+  height: 30rem;
+  width: 35rem;
+  padding: 1.5rem;
   border: 1px solid var(--color-accent);
   box-shadow: 0rem 0rem 0.4rem 0rem var(--color-accent);
   background-color: rgba(9, 24, 12, 0.5);
   border-radius: var(--border-radius-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.8rem;
+  color: var(--color-accent-dark);
 `
 
-const FormRow = styled.div``
+const FormRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.4rem;
 
-const Label = styled.label``
+  div > & {
+    flex-grow: 1;
+  }
 
-const Input = styled.input``
+  /* justify-items: center; */
+  /* grid-template-columns: 4rem 1fr 4rem 1fr; */
+`
+const AdjacentRows = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem;
+`
 
-const TextArea = styled.textarea``
+const Label = styled.label`
+  /* justify-self: center; */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+`
 
+const Input = styled.input`
+  background-color: var(--color-main-white);
+  border-radius: var(--border-radius-xs);
+  height: 1.8rem;
+  border: none;
+`
+
+const TextArea = styled.textarea`
+  background-color: var(--color-main-white);
+  border-radius: var(--border-radius-xs);
+  height: 12rem;
+  border: none;
+`
 function ContactMini() {
   return (
     <StyledContactMini>
@@ -73,18 +109,27 @@ function ContactMini() {
           </ContactAbout>
         </ContactInfoBox>
         <ContactForm>
-          <FormRow>
-            <Label>Name</Label>
-            <Input />
-          </FormRow>
+          <AdjacentRows>
+            <FormRow>
+              <Label>First Name</Label>
+              <Input />
+            </FormRow>
+            <FormRow>
+              <Label>Last Name</Label>
+              <Input />
+            </FormRow>
+          </AdjacentRows>
           <FormRow>
             <Label>Email</Label>
             <Input />
           </FormRow>
           <FormRow>
-            <Label>Message</Label>
+            <Label>What&apos;s up?</Label>
             <TextArea />
           </FormRow>
+          <Button $styleType='primary' onPress={() => {}}>
+            Submit
+          </Button>
         </ContactForm>
       </ContactContainer>
     </StyledContactMini>
