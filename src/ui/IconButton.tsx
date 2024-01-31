@@ -7,10 +7,11 @@ interface IconProps {
 
 const StyledIconButton = styled.a`
   font-size: 0rem;
-  transition: all 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: var(--color-accent-dark);
 
   &:hover {
-    color: var(--color-accent-lighter);
+    color: var(--color-accent);
   }
 `
 

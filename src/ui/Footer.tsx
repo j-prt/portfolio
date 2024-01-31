@@ -29,7 +29,7 @@ const Copyright = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--color-accent-lighter);
+  color: var(--color-accent-dark);
 `
 
 function Footer() {

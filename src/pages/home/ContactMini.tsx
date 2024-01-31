@@ -12,7 +12,8 @@ const StyledContactMini = styled.section`
 
 const ContactContainer = styled.div`
   max-width: var(--home-max-width);
-  padding: var(--home-padding);
+  padding: 4rem 2rem;
+  margin: 0 auto;
   gap: 1.5rem;
 
   display: flex;
@@ -22,24 +23,69 @@ const ContactContainer = styled.div`
   color: var(--color-accent);
 `
 
-const ContactHeader = styled.div``
+const ContactHeader = styled.h1`
+  font-family: 'Zilla Slab', serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 2.5rem;
+  letter-spacing: 1.2px;
+`
 
-const ContactForm = styled.div`
+const ContactInfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  gap: 2rem;
+`
+
+const ContactAbout = styled.p`
+  font-size: 1.2rem;
+  letter-spacing: 0.8px;
+`
+
+const ContactForm = styled.form`
   height: 20rem;
   width: 30rem;
   padding: 1rem;
-  border: 0.5px solid var(--color-accent);
-  box-shadow: 0rem 0rem 0.5rem 0rem var(--color-accent);
+  border: 1px solid var(--color-accent);
+  box-shadow: 0rem 0rem 0.4rem 0rem var(--color-accent);
   background-color: rgba(9, 24, 12, 0.5);
   border-radius: var(--border-radius-md);
 `
+
+const FormRow = styled.div``
+
+const Label = styled.label``
+
+const Input = styled.input``
+
+const TextArea = styled.textarea``
 
 function ContactMini() {
   return (
     <StyledContactMini>
       <ContactContainer>
-        <ContactHeader>Questions?</ContactHeader>
-        <ContactForm>Form go here</ContactForm>
+        <ContactInfoBox>
+          <ContactHeader>Contact</ContactHeader>
+          <ContactAbout>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab repellendus modi placeat,
+            vitae sequi maxime, iure laborum?
+          </ContactAbout>
+        </ContactInfoBox>
+        <ContactForm>
+          <FormRow>
+            <Label>Name</Label>
+            <Input />
+          </FormRow>
+          <FormRow>
+            <Label>Email</Label>
+            <Input />
+          </FormRow>
+          <FormRow>
+            <Label>Message</Label>
+            <TextArea />
+          </FormRow>
+        </ContactForm>
       </ContactContainer>
     </StyledContactMini>
   )
