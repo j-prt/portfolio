@@ -76,6 +76,12 @@ body {
 button {
   font-family: 'Chakra Petch', sans-serif;
 }
+
+input,
+textarea {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1rem;
+}
 `
 
 // :root {
