@@ -81,6 +81,23 @@ input,
 textarea {
   font-family: 'Chakra Petch', sans-serif;
   font-size: 1rem;
+  padding: 2px;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  transition: outline 0s;
+}
+
+a:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  transition: outline 0s;
+  border-radius: var(--border-radius-sm);
 }
 `
 
