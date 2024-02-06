@@ -1,9 +1,23 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Button from './Button'
 
-const StyledContactForm = styled.form`
-  height: 30rem;
-  width: 35rem;
+interface SCFProps {
+  size?: 'small' | 'large'
+}
+
+const sizes = {
+  small: css`
+    height: 30rem;
+    width: 35rem;
+  `,
+  large: css`
+    height: 40rem;
+    width: 50rem;
+  `,
+}
+
+const StyledContactForm = styled.form<SCFProps>`
+  ${props => sizes[props.size || 'small']}
   padding: 1.5rem;
   border: 1px solid var(--color-accent);
   box-shadow: 0rem 0rem 0.4rem 0rem var(--color-accent);
@@ -51,9 +65,9 @@ const TextArea = styled.textarea`
   border: none;
 `
 
-function ContactForm() {
+function ContactForm({ size }: SCFProps) {
   return (
-    <StyledContactForm>
+    <StyledContactForm size={size}>
       <AdjacentRows>
         <FormRow>
           <Label>First Name</Label>

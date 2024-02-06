@@ -68,9 +68,11 @@ export const GlobalStyles = createGlobalStyle`
       }
     }
 
+
 body {
   font-family: 'Chakra Petch', sans-serif;
   font-weight: 300;
+  overscroll-behavior: none;
 }
 
 button {
@@ -98,6 +100,11 @@ a:focus {
   outline-offset: 2px;
   transition: outline 0s;
   border-radius: var(--border-radius-sm);
+}
+
+:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
 }
 `
 

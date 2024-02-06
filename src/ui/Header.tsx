@@ -55,7 +55,7 @@ function Header() {
             <Link to={'projects'}>Projects</Link>
           </NavItem>
           <NavItem>
-            <Link to={'contact'}>Contact</Link>
+            <Link to={'about'}>About</Link>
           </NavItem>
         </NavList>
       </HeaderContainer>

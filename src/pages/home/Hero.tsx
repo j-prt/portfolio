@@ -1,16 +1,7 @@
 import styled from 'styled-components'
 import Button from '../../ui/Button'
 import ButtonBox from '../../ui/ButtonBox'
-
-const HeroContainer = styled.main`
-  height: 100vh;
-  background-image: radial-gradient(
-    farthest-corner at 5% 70%,
-    var(--color-main-med),
-    var(--color-main-dark),
-    var(--color-main-med)
-  );
-`
+import FullScreenBackground from '../../ui/FullScreenBackground'
 
 const HeroBox = styled.div`
   max-width: var(--home-max-width);
@@ -84,7 +75,7 @@ const AboutText = styled.p`
 
 function Hero() {
   return (
-    <HeroContainer>
+    <FullScreenBackground>
       <HeroBox>
         <ProfileBox>
           <H1>Joseph</H1>
@@ -109,7 +100,7 @@ function Hero() {
           </ButtonBox>
         </About>
       </HeroBox>
-    </HeroContainer>
+    </FullScreenBackground>
   )
 }
 
