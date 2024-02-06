@@ -1,18 +1,7 @@
 import styled from 'styled-components'
 import FullScreenBackground from '../ui/FullScreenBackground'
 import ContactForm from '../ui/ContactForm'
-
-const AboutContainer = styled.div`
-  padding: 6rem 2rem;
-  margin: 0 auto;
-  max-width: var(--home-max-width);
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  align-items: center;
-  color: var(--color-accent);
-`
+import MainContainer from '../ui/MainContainer'
 
 const AboutText = styled.p``
 const AboutTitle = styled.h1`
@@ -22,7 +11,7 @@ const AboutTitle = styled.h1`
 function About() {
   return (
     <FullScreenBackground size='long'>
-      <AboutContainer>
+      <MainContainer>
         <AboutTitle>a yo wassup </AboutTitle>
         <AboutText>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid suscipit quibusdam
@@ -35,7 +24,7 @@ function About() {
           corrupti exercitationem aut reiciendis deleniti laborum. Ipsam quod cupiditate quo animi?
         </AboutText>
         <ContactForm size='large' />
-      </AboutContainer>
+      </MainContainer>
     </FullScreenBackground>
   )
 }

@@ -1,5 +1,12 @@
+import FullScreenBackground from '../../ui/FullScreenBackground'
+import MainContainer from '../../ui/MainContainer'
+
 function Blog() {
-  return <div>Blog</div>
+  return (
+    <FullScreenBackground color='secondary'>
+      <MainContainer>Blog</MainContainer>
+    </FullScreenBackground>
+  )
 }
 
 export default Blog
