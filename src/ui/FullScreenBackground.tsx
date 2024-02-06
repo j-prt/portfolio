@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 interface FSBProps {
   size?: 'normal' | 'long'
+  color?: 'main' | 'secondary'
 }
 
 const sizes = {
@@ -9,18 +10,30 @@ const sizes = {
     height: 100vh;
   `,
   long: css`
-    height: 140vh;
+    height: 80rem;
+  `,
+  double: css`
+    height: 120rem;
+  `,
+}
+
+const colors = {
+  main: css`
+    background-image: radial-gradient(
+      farthest-corner at 5% 70%,
+      var(--color-main-med),
+      var(--color-main-dark),
+      var(--color-main-med)
+    );
+  `,
+  secondary: css`
+    background-color: var(--color-secondary);
   `,
 }
 
 const FullScreenBackground = styled.main<FSBProps>`
   ${props => sizes[props.size || 'normal']};
-  background-image: radial-gradient(
-    farthest-corner at 5% 70%,
-    var(--color-main-med),
-    var(--color-main-dark),
-    var(--color-main-med)
-  );
+  ${props => colors[props.color || 'main']};
 `
 
 export default FullScreenBackground

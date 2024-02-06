@@ -16,7 +16,7 @@ const sides = {
 }
 
 const StyledFunHeader = styled.h1<FunHeaderProps>`
-  color: var(--color-blue-med);
+  color: var(--color-secondary-med);
   position: relative;
   font-size: 4.5rem;
   font-family: 'Zilla Slab', serif;

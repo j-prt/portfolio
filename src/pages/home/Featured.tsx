@@ -3,7 +3,7 @@ import BlogMini from './BlogMini'
 import ProjectMini from './ProjectMini'
 
 const StyledFeatured = styled.section`
-  background-color: var(--color-blue);
+  background-color: var(--color-secondary);
 `
 
 const FeatureBox = styled.div`

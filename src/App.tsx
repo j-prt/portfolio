@@ -3,8 +3,8 @@ import { GlobalStyles } from './styles/GlobalStyles'
 
 import Home from './pages/home/Home'
 import AppLayout from './ui/AppLayout'
-import Projects from './pages/Projects'
-import Blog from './pages/Blog'
+import Projects from './pages/projects/Projects'
+import Blog from './pages/blog/Blog'
 import About from './pages/About'
 
 function App() {

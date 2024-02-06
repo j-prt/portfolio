@@ -13,11 +13,16 @@ export const GlobalStyles = createGlobalStyle`
 --color-main-dark: #09180c;
 --color-main-dark-rgb: rgb(9, 24, 12);
 
---color-secondary: #4E9F3D;
+/* --color-secondary: #4E9F3D;
 --color-secondary-dark: #2f5f25;
 --color-secondary-med: #3e7f31;
 --color-secondary-light: #83bc77;
---color-secondary-lighter: #b8d9b1;
+--color-secondary-lighter: #b8d9b1; */
+
+--color-secondary: #281E51;
+--color-secondary-rgb: rgb(40, 30, 81);
+--color-secondary-med: #1c1539;
+--color-secondary-med-rgb: rgb(28, 21, 57);
 
 --color-accent: #D8E9A8;
 --color-accent-light: #e4f0c2;
@@ -25,10 +30,10 @@ export const GlobalStyles = createGlobalStyle`
 --color-accent-dark: #97a376;
 --color-accent-darkest: #161711;
 
---color-blue: #281E51;
+/* --color-blue: #281E51;
 --color-blue-rgb: rgb(40, 30, 81);
 --color-blue-med: #1c1539;
---color-blue-med-rgb: rgb(28, 21, 57);
+--color-blue-med-rgb: rgb(28, 21, 57); */
 
 
 --border-radius-md: 8px;
