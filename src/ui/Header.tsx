@@ -2,16 +2,12 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
-  position: absolute;
+  position: fixed;
   width: 100%;
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 2rem; */
-  /* border-bottom: 1px solid #000; */
   background-color: transparent;
+  backdrop-filter: blur(3px);
   color: var(--color-accent);
+  z-index: 999;
 `
 
 const HeaderContainer = styled.div`
