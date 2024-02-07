@@ -7,7 +7,7 @@ function Blog() {
     <FullScreenBackground color='secondary'>
       <MainContainer>
         Blog
-        <DateSquare year='2024' monthday='1111' />
+        <DateSquare year='2024' monthday='02/07' />
       </MainContainer>
     </FullScreenBackground>
   )
