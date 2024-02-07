@@ -1,13 +1,15 @@
-import DateSquare from '../../ui/DateSquare'
 import FullScreenBackground from '../../ui/FullScreenBackground'
 import MainContainer from '../../ui/MainContainer'
+import BlogCard from './BlogCard'
 
 function Blog() {
   return (
-    <FullScreenBackground color='secondary'>
+    <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
         Blog
-        <DateSquare year='2024' monthday='02/07' />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
       </MainContainer>
     </FullScreenBackground>
   )
