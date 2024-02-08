@@ -10,7 +10,7 @@ function Projects() {
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
         <FunHeader>Projects!</FunHeader>
-        <SubTitle>the stuff I made</SubTitle>
+        <SubTitle>the stuff I make</SubTitle>
         <Rule type='bold' />
         <ProjectCard />
       </MainContainer>
