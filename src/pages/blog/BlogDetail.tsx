@@ -2,13 +2,10 @@ import styled from 'styled-components'
 import HeadingSimple from '../../ui/HeadingSimple'
 import FullScreenBackground from '../../ui/FullScreenBackground'
 import MainContainer from '../../ui/MainContainer'
+import DateLine from '../../ui/DateLine'
 
 const Paragraph = styled.p`
   max-width: 40rem;
-`
-const DateLine = styled.p`
-  color: var(--color-accent-dark);
-  letter-spacing: 3px;
 `
 
 // TODO: write blogs. Also data will be served from backend

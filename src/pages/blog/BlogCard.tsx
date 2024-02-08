@@ -28,7 +28,7 @@ const BlogCardBox = styled.div`
 `
 
 const BlogIntro = styled.p`
-  width: 35rem;
+  max-width: 35rem;
 `
 
 function BlogCard() {
