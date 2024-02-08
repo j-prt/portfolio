@@ -6,7 +6,7 @@ interface RuleProps {
 
 const types = {
   bold: css`
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     width: 85%;
     border-bottom: 1px solid var(--color-accent); // rgba(228, 240, 194, 0.7); // color-accent-light
     box-shadow: 0rem 0rem 2rem 0.05rem var(--color-accent);
