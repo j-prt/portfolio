@@ -1,12 +1,8 @@
-import styled from 'styled-components'
 import HeadingSimple from '../../ui/HeadingSimple'
 import FullScreenBackground from '../../ui/FullScreenBackground'
 import MainContainer from '../../ui/MainContainer'
 import DateLine from '../../ui/DateLine'
-
-const Paragraph = styled.p`
-  max-width: 40rem;
-`
+import Paragraph from '../../ui/Paragraph'
 
 // TODO: write blogs. Also data will be served from backend
 // as json, so the entire logic here needs to be implemented.

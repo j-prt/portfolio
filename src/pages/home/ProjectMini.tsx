@@ -17,7 +17,7 @@ function ProjectMini() {
     <FeaturedContainer>
       <FeaturedImg side='left' brightness='medium' imgUrl='./public/laptop2.jpg' />
       <CopyBox>
-        <FunHeader side='right'>Project Spotlight</FunHeader>
+        <FunHeader>Project Spotlight</FunHeader>
         <SubTitle>Title of the project featured</SubTitle>
         <ProjectDescription>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis eaque laudantium
