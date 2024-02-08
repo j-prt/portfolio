@@ -1,10 +1,24 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-const SubTitle = styled.p`
-  font-size: 1.2rem;
+interface SubTitleProps {
+  size?: 'small' | 'medium'
+}
+
+const sizes = {
+  small: css`
+    font-size: 0.8rem;
+    letter-spacing: 4.5px;
+  `,
+  medium: css`
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+  `,
+}
+
+const SubTitle = styled.p<SubTitleProps>`
   font-weight: 300;
-  letter-spacing: 4px;
   color: var(--color-accent-dark);
+  ${props => sizes[props.size || 'medium']}
 `
 
 export default SubTitle

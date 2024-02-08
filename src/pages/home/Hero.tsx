@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Button from '../../ui/Button'
 import ButtonBox from '../../ui/ButtonBox'
 import FullScreenBackground from '../../ui/FullScreenBackground'
+import SubTitle from '../../ui/SubTitle'
 
 const HeroBox = styled.div`
   max-width: var(--home-max-width);
@@ -57,12 +58,7 @@ const H2 = styled.p`
   color: var(--color-accent);
 `
 
-const H3 = styled.p`
-  font-size: 0.8rem;
-  font-weight: 300;
-  letter-spacing: 4.5px;
-  color: var(--color-accent-dark);
-
+const H3 = styled(SubTitle)`
   margin-bottom: 1.5rem;
 `
 
@@ -84,7 +80,7 @@ function Hero() {
         </ProfileBox>
         <About>
           <H2>Software Developer</H2>
-          <H3>AI | DATA | WEB</H3>
+          <H3 size='small'>AI | DATA | WEB</H3>
           <AboutText>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas reiciendis iusto
             perferendis recusandae saepe accusamus quam ratione possimus earum ducimus, ipsam velit
