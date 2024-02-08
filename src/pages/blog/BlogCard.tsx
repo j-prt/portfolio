@@ -15,7 +15,7 @@ const StyledBlogCard = styled.div`
       left: 10%;
       bottom: 0;
       width: 80%;
-      border-bottom: 0.5px solid var(--color-accent);
+      border-bottom: 0.5px solid var(--color-accent-light);
     }
   }
 `

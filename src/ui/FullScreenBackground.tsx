@@ -10,10 +10,10 @@ const sizes = {
     height: 100vh;
   `,
   long: css`
-    height: 80rem;
+    min-height: 80rem;
   `,
   double: css`
-    height: 120rem;
+    min-height: 120rem;
   `,
 }
 
