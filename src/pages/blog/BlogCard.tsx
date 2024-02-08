@@ -3,7 +3,7 @@ import DateSquare from '../../ui/DateSquare'
 
 const StyledBlogCard = styled.div`
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
   padding-bottom: 3rem;
 
@@ -17,14 +17,13 @@ const StyledBlogCard = styled.div`
       width: 80%;
       border-bottom: 0.5px solid var(--color-accent);
     }
-    /* box-shadow: 0px 24px 30px -6px var(--color-accent); */
   }
 `
 
 const BlogCardBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 `
 
 const BlogTitle = styled.p`
