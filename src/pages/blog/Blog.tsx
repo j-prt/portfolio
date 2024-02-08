@@ -1,7 +1,8 @@
 import FullScreenBackground from '../../ui/FullScreenBackground'
-import FunHeader from '../../ui/FunHeader'
+import FunHeader from '../../ui/FunHeading'
 import MainContainer from '../../ui/MainContainer'
 import Rule from '../../ui/Rule'
+import SubTitle from '../../ui/SubTitle'
 import BlogCard from './BlogCard'
 
 function Blog() {
@@ -9,6 +10,7 @@ function Blog() {
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
         <FunHeader>Blog!</FunHeader>
+        <SubTitle>where I write about things</SubTitle>
         <Rule type='bold' />
         <BlogCard />
         <BlogCard />

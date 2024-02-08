@@ -14,7 +14,7 @@ interface FunHeaderProps {
 //   `,
 // }
 
-const FunHeader = styled.h1<FunHeaderProps>`
+const FunHeading = styled.h1<FunHeaderProps>`
   color: var(--color-secondary-med);
   position: relative;
   font-size: 4.5rem;
@@ -41,4 +41,4 @@ const FunHeader = styled.h1<FunHeaderProps>`
   }
 `
 
-export default FunHeader
+export default FunHeading

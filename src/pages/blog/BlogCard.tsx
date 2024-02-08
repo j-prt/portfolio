@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import DateSquare from '../../ui/DateSquare'
+import HeadingSimple from '../../ui/HeadingSimple'
 
 const StyledBlogCard = styled.div`
   display: flex;
@@ -26,14 +27,6 @@ const BlogCardBox = styled.div`
   gap: 1.5rem;
 `
 
-const BlogTitle = styled.p`
-  font-size: 3rem;
-  font-family: 'Zilla Slab', serif;
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: 1px;
-`
-
 const BlogIntro = styled.p`
   width: 35rem;
 `
@@ -43,7 +36,7 @@ function BlogCard() {
     <StyledBlogCard>
       <DateSquare year='2024' monthday='02/07' />
       <BlogCardBox>
-        <BlogTitle>Title of the Post!</BlogTitle>
+        <HeadingSimple>Title of the Post!</HeadingSimple>
         <BlogIntro>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus consectetur ad illo.
           Veniam quod recusandae sunt dolore, ab sint esse deserunt ex odit aperiam rerum, debitis

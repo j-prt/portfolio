@@ -3,7 +3,7 @@ import ButtonBox from '../../ui/ButtonBox'
 import FeaturedContainer from '../../ui/FeaturedContainer'
 import FeaturedImg from '../../ui/FeaturedImg'
 import CopyBox from '../../ui/CopyBox'
-import FunHeader from '../../ui/FunHeader'
+import FunHeader from '../../ui/FunHeading'
 import TextQuote from '../../ui/TextQuote'
 import SubTitle from '../../ui/SubTitle'
 
