@@ -3,6 +3,15 @@ import FullScreenBackground from '../../ui/FullScreenBackground'
 import MainContainer from '../../ui/MainContainer'
 import DateLine from '../../ui/DateLine'
 import Paragraph from '../../ui/Paragraph'
+import styled from 'styled-components'
+import { IoMdArrowBack } from 'react-icons/io'
+import { Link } from 'react-router-dom'
+
+const Back = styled.div`
+  position: fixed;
+  left: 3rem;
+  font-size: 2rem;
+`
 
 // TODO: write blogs. Also data will be served from backend
 // as json, so the entire logic here needs to be implemented.
@@ -10,6 +19,11 @@ function BlogDetail() {
   return (
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
+        <Back>
+          <Link to='/blog'>
+            <IoMdArrowBack />
+          </Link>
+        </Back>
         <DateLine>FEB 07 2024</DateLine>
         <HeadingSimple>Title of the Post!</HeadingSimple>
         <Paragraph>
