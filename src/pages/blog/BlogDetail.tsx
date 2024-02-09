@@ -8,8 +8,12 @@ import { IoMdArrowBack } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 
 const Back = styled.div`
-  position: fixed;
-  left: 3rem;
+  width: 100%;
+  max-width: 55rem;
+  position: sticky;
+  margin-left: 2rem;
+  top: 8rem;
+
   font-size: 2rem;
 `
 

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 interface MCProps {
   gap?: number
+  relative?: boolean
 }
 
 const MainContainer = styled.div<MCProps>`
@@ -10,9 +11,11 @@ const MainContainer = styled.div<MCProps>`
   max-width: var(--home-max-width);
   display: flex;
   flex-direction: column;
-  gap: ${props => (props.gap || 3) + 'rem'};
   align-items: center;
   color: var(--color-accent);
+
+  ${props => (props.relative ? 'position: relative' : '')};
+  gap: ${props => (props.gap || 3) + 'rem'};
 `
 
 export default MainContainer
