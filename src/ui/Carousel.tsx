@@ -23,20 +23,27 @@ const StyledCarousel = styled.div`
 `
 
 const CarouselImg = styled.div<ImgProps>`
+  position: relative;
   height: 26rem;
   width: 40rem;
   margin: auto;
-  background-image: linear-gradient(
-      rgba(var(--color-secondary-med-rgb), 0.2),
-      rgba(var(--color-secondary-med-rgb), 0.2)
-    ),
-    url(${props => props.url});
+  ${props => `background-image: url(${props.url})`};
 
   background-size: cover;
   background-position: center;
   border-radius: var(--border-radius-sm);
-  transition: all 1s ease;
+  transition: background-image 0.3s;
 
+  &:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      rgba(var(--color-secondary-med-rgb), 0.2),
+      rgba(var(--color-secondary-med-rgb), 0.2)
+    );
+  }
   /* background-repeat: no-repeat; */
   /* flex: 1 0 100%; */
 `
