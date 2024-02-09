@@ -20,9 +20,9 @@ export const GlobalStyles = createGlobalStyle`
 --color-secondary-lighter: #b8d9b1; */
 
 --color-secondary: #281E51;
---color-secondary-rgb: rgb(40, 30, 81);
+--color-secondary-rgb: 40, 30, 81;
 --color-secondary-med: #1c1539;
---color-secondary-med-rgb: rgb(28, 21, 57);
+--color-secondary-med-rgb: 28, 21, 57;
 
 --color-accent: #D8E9A8;
 --color-accent-light: #e4f0c2;

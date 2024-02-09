@@ -28,7 +28,9 @@ function ProjectCard() {
       <Paragraph>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam porro aspernatur ex odio
         illum animi quae, officia beatae, facere iusto error soluta reiciendis explicabo, officiis
-        eveniet totam. Soluta, maxime maiores!
+        eveniet totam. Soluta, maxime maiores! Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Unde amet dolor laborum natus obcaecati labore asperiores magni pariatur sunt maiores,
+        beatae doloremque debitis enim fuga in repellendus?
       </Paragraph>
       <ButtonBox>
         <Button onPress={() => {}} $styleType='primary'>
