@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 import DateSquare from '../../ui/DateSquare'
 import HeadingSimple from '../../ui/HeadingSimple'
+import { BlogData } from '../../types'
+
+interface BlogCardProps {
+  blogdata: BlogData
+}
 
 const StyledBlogCard = styled.div`
   display: flex;
   gap: 4rem;
   align-items: center;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 
   &:not(:last-child) {
     position: relative;
@@ -31,17 +36,13 @@ const BlogIntro = styled.p`
   max-width: 35rem;
 `
 
-function BlogCard() {
+function BlogCard({ blogdata }: BlogCardProps) {
   return (
     <StyledBlogCard>
-      <DateSquare year='2024' monthday='02/07' />
+      <DateSquare year={blogdata.year} monthday={blogdata.monthday} />
       <BlogCardBox>
-        <HeadingSimple>Title of the Post!</HeadingSimple>
-        <BlogIntro>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus consectetur ad illo.
-          Veniam quod recusandae sunt dolore, ab sint esse deserunt ex odit aperiam rerum, debitis
-          suscipit, tempore magnam dicta!
-        </BlogIntro>
+        <HeadingSimple>{blogdata.title}</HeadingSimple>
+        <BlogIntro>{blogdata.intro}</BlogIntro>
       </BlogCardBox>
     </StyledBlogCard>
   )
