@@ -9,7 +9,7 @@ interface StyleProps {
 
 interface ButtonProps extends StyleProps {
   children: React.ReactNode
-  onPress: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onPress?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 const variations = {
@@ -52,6 +52,7 @@ const StyledButton = styled.button<StyleProps>`
   border-radius: var(--border-radius-sm);
   border: none;
   transition: all 0.3s;
+  cursor: pointer;
   ${props => sizes[props.size || 'medium']};
   ${props => variations[props.$styleType || 'primary']};
   &:hover {

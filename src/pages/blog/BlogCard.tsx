@@ -4,7 +4,7 @@ import HeadingSimple from '../../ui/HeadingSimple'
 import { BlogData } from '../../types'
 
 interface BlogCardProps {
-  blogdata: BlogData
+  blogData: BlogData
 }
 
 const StyledBlogCard = styled.div`
@@ -36,13 +36,13 @@ const BlogIntro = styled.p`
   max-width: 35rem;
 `
 
-function BlogCard({ blogdata }: BlogCardProps) {
+function BlogCard({ blogData }: BlogCardProps) {
   return (
     <StyledBlogCard>
-      <DateSquare year={blogdata.year} monthday={blogdata.monthday} />
+      <DateSquare year={blogData.year} monthday={blogData.monthday} />
       <BlogCardBox>
-        <HeadingSimple>{blogdata.title}</HeadingSimple>
-        <BlogIntro>{blogdata.intro}</BlogIntro>
+        <HeadingSimple>{blogData.title}</HeadingSimple>
+        <BlogIntro>{blogData.intro}</BlogIntro>
       </BlogCardBox>
     </StyledBlogCard>
   )

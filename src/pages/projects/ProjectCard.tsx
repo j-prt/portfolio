@@ -7,38 +7,58 @@ import Button from '../../ui/Button'
 import FlexColumn from '../../ui/FlexColumn'
 import ButtonBox from '../../ui/ButtonBox'
 import Carousel from '../../ui/Carousel'
+import { ProjectData } from '../../types'
 
 const StyledProjectCard = styled(FlexColumn)`
   gap: 2rem;
+  padding-bottom: 5rem;
+
+  &:not(:last-child) {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 10%;
+      bottom: 0;
+      width: 80%;
+      border-bottom: 0.5px solid var(--color-accent-light);
+    }
+  }
 `
 
 const ProjectCardHeader = styled(HeadingSimple)`
   transform: translateY(-5px);
 `
 
-function ProjectCard() {
+interface ProjectCardProps {
+  projectData: ProjectData
+}
+
+function ProjectCard({ projectData }: ProjectCardProps) {
   return (
     <StyledProjectCard>
       <FlexColumn>
-        <DateLine>FEB 2024</DateLine>
-        <ProjectCardHeader>Project Card</ProjectCardHeader>
-        <SubTitle size='small'>TECH | OTHER | LANGUAGE | PARADIGM</SubTitle>
+        <DateLine>{projectData.date}</DateLine>
+        <ProjectCardHeader>{projectData.title}</ProjectCardHeader>
+        <SubTitle size='small'>
+          {projectData.tags.reduce(
+            (current, tag) => current.toUpperCase() + ' | ' + tag.toUpperCase()
+          )}
+        </SubTitle>
       </FlexColumn>
       <Carousel />
-      <Paragraph>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam porro aspernatur ex odio
-        illum animi quae, officia beatae, facere iusto error soluta reiciendis explicabo, officiis
-        eveniet totam. Soluta, maxime maiores! Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit. Unde amet dolor laborum natus obcaecati labore asperiores magni pariatur sunt maiores,
-        beatae doloremque debitis enim fuga in repellendus?
-      </Paragraph>
+      <Paragraph>{projectData.description}</Paragraph>
       <ButtonBox>
-        <Button onPress={() => {}} $styleType='primary'>
-          Try It Out
-        </Button>
-        <Button onPress={() => {}} $styleType='secondary'>
-          See Source
-        </Button>
+        {projectData.liveLink && (
+          <a href={projectData.liveLink}>
+            <Button $styleType='primary'>Try It Out</Button>
+          </a>
+        )}
+        {projectData.sourceLink && (
+          <a href={projectData.sourceLink}>
+            <Button $styleType='secondary'>See Source</Button>
+          </a>
+        )}
       </ButtonBox>
     </StyledProjectCard>
   )
