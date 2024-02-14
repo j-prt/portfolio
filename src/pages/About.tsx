@@ -2,10 +2,11 @@ import styled from 'styled-components'
 import FullScreenBackground from '../ui/FullScreenBackground'
 import ContactForm from '../ui/ContactForm'
 import MainContainer from '../ui/MainContainer'
+import HeadingSimple from '../ui/HeadingSimple'
 
 const AboutText = styled.p``
-const AboutTitle = styled.h1`
-  font-size: 3rem;
+const AboutTitle = styled(HeadingSimple)`
+  font-size: 4rem;
 `
 
 function About() {

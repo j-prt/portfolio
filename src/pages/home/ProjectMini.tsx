@@ -6,6 +6,7 @@ import CopyBox from '../../ui/CopyBox'
 import ButtonBox from '../../ui/ButtonBox'
 import Button from '../../ui/Button'
 import SubTitle from '../../ui/SubTitle'
+import { Link } from 'react-router-dom'
 
 const ProjectDescription = styled.p`
   max-width: 30rem;
@@ -17,22 +18,21 @@ function ProjectMini() {
     <FeaturedContainer>
       <CopyBox>
         <FunHeader>Project Spotlight</FunHeader>
-        <SubTitle>Title of the project featured</SubTitle>
+        <SubTitle>Cronicle</SubTitle>
         <ProjectDescription>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis eaque laudantium
-          distinctio perferendis maxime ex blanditiis suscipit, molestiae dignissimos officia nam
-          consequatur dolores exercitationem esse saepe corrupti hic iusto quo! Lorem ipsum, dolor
-          sit amet consectetur adipisicing elit. Magni nesciunt quia repudiandae distinctio omnis
-          modi facere quis voluptates quibusdam nihil! Vel iste obcaecati quia. Dolores eaque fugiat
-          quasi incidunt consequatur!
+          Cronicle is a system designed for gathering web articles, uploading them to the cloud, and
+          generating curated emails using AI predictions. The project&apos;s workflow involves
+          multiple stages: data collection with custom scrapers targeting selected websites; storage
+          and preprocessing in the cloud; and finally, selection and delivery, with the option to
+          drop in different NLP models for AI inference stage.
         </ProjectDescription>
         <ButtonBox>
-          <Button onPress={() => {}} $styleType='primary'>
-            Try It Out
-          </Button>
-          <Button onPress={() => {}} $styleType='secondary'>
-            All Projects
-          </Button>
+          <a href='https://github.com/j-prt/cronicle' target='_blank' rel='noreferrer'>
+            <Button $styleType='primary'>See on GitHub</Button>
+          </a>
+          <Link to='/projects'>
+            <Button $styleType='secondary'>All Projects</Button>
+          </Link>
         </ButtonBox>
       </CopyBox>
       <FeaturedImg side='right' brightness='medium' imgUrl='./public/laptop2.jpg' />

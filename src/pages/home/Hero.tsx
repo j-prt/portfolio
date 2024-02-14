@@ -83,14 +83,15 @@ function Hero() {
           <H2>Software Developer</H2>
           <H3 size='small'>AI | DATA | WEB</H3>
           <AboutText>
-            Hey! I’m Joseph. I’m a software developer with a passion for people and product. I love
-            building — web apps, machine learning systems, automations to make my life easier —
-            there’s nothing better than getting a project up and running. I’m always looking to grow
-            my skills, take on new challenges, and share what I’ve been learning.
+            Hey! I&apos;m Joseph. I&apos;m a software developer with a passion for people and
+            product. I love building — web apps, machine learning systems, automations to make my
+            life easier — there&apos;s nothing better than getting a project up and running.
+            I&apos;m always looking to grow my skills, take on new challenges, and share what
+            I&apos;ve been learning.
             <br />
             <br />
-            If you’re interested in working together, curious about what I do, or even just want to
-            chat, you can use the contact form below or connect with me on LinkedIn. ✌︎
+            If you&apos;re interested in working together, curious about what I do, or even just
+            want to chat, you can use the contact form below or connect with me on LinkedIn. ✌︎
           </AboutText>
           <ButtonBox>
             <Button onPress={() => {}} $styleType='primary'>

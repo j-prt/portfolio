@@ -7,12 +7,14 @@ import Projects from './pages/projects/Projects'
 import Blog from './pages/blog/Blog'
 import About from './pages/About'
 import BlogDetail from './pages/blog/BlogDetail'
+import ScrollToTop from './utils/ScrollToTop'
 
 function App() {
   return (
     <>
       <GlobalStyles />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Home />} />

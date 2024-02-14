@@ -17,7 +17,7 @@ const StyledIconButton = styled.a`
 
 function IconButton({ portal }: IconProps) {
   return (
-    <StyledIconButton href={URLS[portal]} target='_blank'>
+    <StyledIconButton href={URLS[portal]} target='_blank' rel='noreferrer'>
       {portal == 'github' && (
         <svg
           stroke='currentColor'

@@ -50,12 +50,12 @@ function ProjectCard({ projectData }: ProjectCardProps) {
       <Paragraph>{projectData.description}</Paragraph>
       <ButtonBox>
         {projectData.liveLink && (
-          <a href={projectData.liveLink}>
+          <a href={projectData.liveLink} target='_blank' rel='noreferrer'>
             <Button $styleType='primary'>Try It Out</Button>
           </a>
         )}
         {projectData.sourceLink && (
-          <a href={projectData.sourceLink}>
+          <a href={projectData.sourceLink} target='_blank' rel='noreferrer'>
             <Button $styleType='secondary'>See Source</Button>
           </a>
         )}
