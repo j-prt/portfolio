@@ -1,8 +1,8 @@
 export interface BlogData {
-  year: string
-  monthday: string
+  date: Date
   title: string
   intro: string
+  body: string
 }
 
 export interface ProjectData {
