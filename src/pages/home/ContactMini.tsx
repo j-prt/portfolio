@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import ContactForm from '../../ui/ContactForm'
 
 const StyledContactMini = styled.section`
-  height: 50rem;
+  height: 70rem;
   background-image: radial-gradient(
     farthest-corner at 25% 5%,
     var(--color-main-med),
@@ -13,7 +13,7 @@ const StyledContactMini = styled.section`
 
 const ContactContainer = styled.div`
   max-width: var(--home-max-width);
-  padding: 8rem 2rem;
+  padding: 18rem 2rem 12rem;
   margin: 0 auto;
   gap: 1.5rem;
 
@@ -28,7 +28,7 @@ const ContactHeader = styled.h1`
   font-family: 'Zilla Slab', serif;
   font-weight: 500;
   font-style: italic;
-  font-size: 2.5rem;
+  font-size: 3rem;
   letter-spacing: 1.2px;
 `
 

@@ -21,8 +21,8 @@ const ProfileBox = styled.div`
 
 const Img = styled.div`
   grid-column: 1/3;
-  width: 24rem;
-  height: 16rem;
+  width: 28rem;
+  height: 18rem;
   border-radius: var(--border-radius-md);
   background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
     url('./public/cat3.jpg');
@@ -42,7 +42,7 @@ const About = styled.div`
 
 const H1 = styled.h1`
   grid-column: 2 / 4;
-  font-size: 4.5rem;
+  font-size: 5rem;
   font-family: 'Zilla Slab', serif;
   font-weight: 600;
   font-style: italic;
@@ -53,7 +53,7 @@ const H1 = styled.h1`
   z-index: 1;
 `
 const H2 = styled.p`
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: var(--color-accent);

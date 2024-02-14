@@ -10,8 +10,9 @@ import SubTitle from '../../ui/SubTitle'
 function BlogMini() {
   return (
     <FeaturedContainer>
+      <FeaturedImg side='left' brightness='dark' imgUrl='./public/notebook.jpg' />
       <CopyBox>
-        <FunHeader side='left'>Featured Blog</FunHeader>
+        <FunHeader>Featured Blog</FunHeader>
         <SubTitle>Title of blogpost featured</SubTitle>
         <TextQuote colorPalette='blue'>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem exercitationem quod harum
@@ -29,7 +30,6 @@ function BlogMini() {
           </Button>
         </ButtonBox>
       </CopyBox>
-      <FeaturedImg side='right' brightness='dark' imgUrl='./public/notebook.jpg' />
     </FeaturedContainer>
   )
 }

@@ -15,7 +15,6 @@ const ProjectDescription = styled.p`
 function ProjectMini() {
   return (
     <FeaturedContainer>
-      <FeaturedImg side='left' brightness='medium' imgUrl='./public/laptop2.jpg' />
       <CopyBox>
         <FunHeader>Project Spotlight</FunHeader>
         <SubTitle>Title of the project featured</SubTitle>
@@ -36,6 +35,7 @@ function ProjectMini() {
           </Button>
         </ButtonBox>
       </CopyBox>
+      <FeaturedImg side='right' brightness='medium' imgUrl='./public/laptop2.jpg' />
     </FeaturedContainer>
   )
 }

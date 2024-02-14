@@ -25,9 +25,9 @@ function Featured() {
   return (
     <StyledFeatured>
       <FeatureBox>
-        <BlogMini />
-        <Rule />
         <ProjectMini />
+        <Rule />
+        <BlogMini />
       </FeatureBox>
     </StyledFeatured>
   )
