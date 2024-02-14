@@ -6,6 +6,7 @@ import Paragraph from '../../ui/Paragraph'
 import styled from 'styled-components'
 import { IoMdArrowBack } from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import { BlogData } from '../../types'
 
 const Back = styled.div`
   width: 100%;
@@ -25,6 +26,14 @@ const Content = styled.div`
 
 // TODO: write blogs. Also data will be served from backend
 // as json, so the entire logic here needs to be implemented.
+
+const blog: BlogData = {
+  date: new Date('2024/02/13'),
+  title: 'Initial Commit',
+  intro: '', // used in the /blog route
+  body: '',
+}
+
 function BlogDetail() {
   return (
     <FullScreenBackground size='long' color='secondary'>
@@ -34,7 +43,15 @@ function BlogDetail() {
             <IoMdArrowBack />
           </Link>
         </Back>
-        <DateLine>FEB 13 2024</DateLine>
+        <DateLine>
+          {blog.date
+            .toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: '2-digit',
+            })
+            .toUpperCase()}
+        </DateLine>
         <HeadingSimple>Initial Commit</HeadingSimple>
         <Content>
           <Paragraph>Great title for an inaugural blogpost, right?</Paragraph>
