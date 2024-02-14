@@ -12,11 +12,11 @@ const StyledHeader = styled.header`
 
 const HeaderContainer = styled.div`
   display: flex;
-  max-width: 70rem;
+  max-width: 80rem;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 3rem;
   margin: 0 auto;
 `
 

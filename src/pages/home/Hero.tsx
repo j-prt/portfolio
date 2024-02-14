@@ -21,7 +21,7 @@ const ProfileBox = styled.div`
 
 const Img = styled.div`
   grid-column: 1/3;
-  width: 100%;
+  width: 24rem;
   height: 16rem;
   border-radius: var(--border-radius-md);
   background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
@@ -37,6 +37,7 @@ const About = styled.div`
   flex-direction: column;
   flex: 1 1 0;
   align-items: center;
+  gap: 0.8rem;
 `
 
 const H1 = styled.h1`
@@ -63,7 +64,7 @@ const H3 = styled(SubTitle)`
 `
 
 const AboutText = styled.p`
-  max-width: 20rem;
+  max-width: 30rem;
   margin-left: 3rem;
   margin-bottom: 1rem;
   color: var(--color-accent);
@@ -82,9 +83,14 @@ function Hero() {
           <H2>Software Developer</H2>
           <H3 size='small'>AI | DATA | WEB</H3>
           <AboutText>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas reiciendis iusto
-            perferendis recusandae saepe accusamus quam ratione possimus earum ducimus, ipsam velit
-            porro suscipit, delectus illo, soluta molestias.
+            Hey! I’m Joseph. I’m a software developer with a passion for people and product. I love
+            building — web apps, machine learning systems, automations to make my life easier —
+            there’s nothing better than getting a project up and running. I’m always looking to grow
+            my skills, take on new challenges, and share what I’ve been learning.
+            <br />
+            <br />
+            If you’re interested in working together, curious about what I do, or even just want to
+            chat, you can use the contact form below or connect with me on LinkedIn. ✌︎
           </AboutText>
           <ButtonBox>
             <Button onPress={() => {}} $styleType='primary'>
