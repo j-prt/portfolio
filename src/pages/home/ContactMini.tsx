@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import ContactForm from '../../ui/ContactForm'
+import { device } from '../../styles/media'
 
 const StyledContactMini = styled.section`
   height: 70rem;
@@ -13,7 +14,6 @@ const StyledContactMini = styled.section`
 
 const ContactContainer = styled.div`
   max-width: var(--home-max-width);
-  padding: 18rem 2rem 12rem;
   margin: 0 auto;
   gap: 1.5rem;
 
@@ -22,6 +22,21 @@ const ContactContainer = styled.div`
   align-items: center;
 
   color: var(--color-accent);
+
+  @media ${device.xs} {
+    flex-direction: column;
+    padding: 12rem 2rem 2rem;
+
+    gap: 5rem;
+  }
+
+  @media ${device.md} {
+    flex-direction: row;
+    padding: 18rem 2rem 2rem;
+  }
+
+  @media ${device.lg} {
+  }
 `
 
 const ContactHeader = styled.h1`

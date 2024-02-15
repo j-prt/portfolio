@@ -39,8 +39,6 @@ const BrandBox = styled.div`
 
 const Img = styled.div`
   grid-column: 1/3;
-  width: 28rem;
-  height: 18rem;
   border-radius: var(--border-radius-md);
   background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
     url('./public/cat3.jpg');

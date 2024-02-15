@@ -8,7 +8,8 @@ interface SCFProps {
 const sizes = {
   small: css`
     height: 30rem;
-    width: 35rem;
+    max-width: 35rem;
+    width: 100%;
   `,
   large: css`
     height: 40rem;
