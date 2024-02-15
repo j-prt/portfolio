@@ -12,15 +12,29 @@ const HeroBox = styled.div`
   padding: 1rem 2rem;
   display: flex;
 
-  @media ${device.lg} {
+  @media ${device.xs} {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 3rem;
+  }
+
+  @media ${device.md} {
+    flex-direction: row;
   }
 `
 
-const ProfileBox = styled.div`
+const BrandBox = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: auto;
   flex: 1 1 0;
+  @media ${device.xs} {
+    grid-template-columns: 1fr 1fr 0.5fr;
+  }
+
+  @media ${device.md} {
+  }
 `
 
 const Img = styled.div`
@@ -32,12 +46,17 @@ const Img = styled.div`
     url('./public/cat3.jpg');
   background-size: cover;
   background-position: center;
-  transform: translate(3rem, -1.5rem);
+
   box-shadow: -1rem 1rem 0rem var(--color-accent);
 
   @media ${device.xs} {
     width: 20rem;
     height: 14rem;
+    transform: translate(3rem, -1.5rem);
+  }
+
+  @media ${device.md} {
+    transform: translate(3rem, -1.5rem);
   }
 
   @media ${device.lg} {
@@ -51,7 +70,14 @@ const About = styled.div`
   flex-direction: column;
   flex: 1 1 0;
   align-items: center;
-  gap: 0.8rem;
+
+  @media ${device.xs} {
+    gap: 0.5rem;
+  }
+
+  @media ${device.lg} {
+    gap: 0.8rem;
+  }
 `
 
 const H1 = styled.h1`
@@ -119,11 +145,11 @@ function Hero() {
   return (
     <FullScreenBackground>
       <HeroBox>
-        <ProfileBox>
+        <BrandBox>
           <H1>Joseph</H1>
           <H1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peart</H1>
           <Img />
-        </ProfileBox>
+        </BrandBox>
         <About>
           <H2>Software Developer</H2>
           <H3 size='small'>AI | DATA | WEB</H3>
