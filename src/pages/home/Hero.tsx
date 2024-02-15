@@ -3,6 +3,7 @@ import Button from '../../ui/Button'
 import ButtonBox from '../../ui/ButtonBox'
 import FullScreenBackground from '../../ui/FullScreenBackground'
 import SubTitle from '../../ui/SubTitle'
+import { device } from '../../styles/media'
 
 const HeroBox = styled.div`
   max-width: var(--home-max-width);
@@ -10,6 +11,9 @@ const HeroBox = styled.div`
   margin: auto;
   padding: 1rem 2rem;
   display: flex;
+
+  @media ${device.lg} {
+  }
 `
 
 const ProfileBox = styled.div`
@@ -30,6 +34,16 @@ const Img = styled.div`
   background-position: center;
   transform: translate(3rem, -1.5rem);
   box-shadow: -1rem 1rem 0rem var(--color-accent);
+
+  @media ${device.xs} {
+    width: 20rem;
+    height: 14rem;
+  }
+
+  @media ${device.lg} {
+    width: 28rem;
+    height: 18rem;
+  }
 `
 const About = styled.div`
   margin: auto;
@@ -51,23 +65,54 @@ const H1 = styled.h1`
   color: var(--color-accent);
   text-shadow: 0 2.4rem 3.2rem rgba(255, 255, 255, 0.25);
   z-index: 1;
+
+  @media ${device.xs} {
+    font-size: 4rem;
+  }
+
+  @media ${device.lg} {
+    font-size: 5rem;
+  }
 `
 const H2 = styled.p`
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
   font-weight: 500;
   color: var(--color-accent);
+
+  @media ${device.xs} {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  @media ${device.lg} {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
 `
 
 const H3 = styled(SubTitle)`
   margin-bottom: 1.5rem;
+
+  @media ${device.xs} {
+    margin-bottom: 1rem;
+  }
+
+  @media ${device.lg} {
+    margin-bottom: 1.5rem;
+  }
 `
 
 const AboutText = styled.p`
   max-width: 30rem;
-  margin-left: 3rem;
-  margin-bottom: 1rem;
   color: var(--color-accent);
+
+  @media ${device.xs} {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  @media ${device.lg} {
+    margin-bottom: 1rem;
+  }
 `
 
 function Hero() {

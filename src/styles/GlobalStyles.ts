@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { device } from './media'
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -111,6 +112,19 @@ a:focus {
   outline: 0;
   box-shadow: none;
 }
+
+
+/* @media ${device.xs} {
+    html {
+      font-size: 90%;
+    }
+  }
+
+  @media ${device.lg} {
+    html {
+      font-size: 120%;
+    }
+  } */
 `
 
 // :root {
