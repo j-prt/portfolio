@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { device } from '../styles/media'
 
 interface SFIProps {
   side: 'right' | 'left'
@@ -30,6 +31,11 @@ const FeaturedImg = styled.div<SFIProps>`
   background-position: center;
   border-radius: var(--border-radius-sm);
   ${props => sides[props.side]}
+  display: none;
+
+  @media ${device.md} {
+    display: block;
+  }
 `
 
 export default FeaturedImg

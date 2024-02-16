@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '../styles/media'
 
 interface FunHeaderProps {
   children: React.ReactNode
@@ -17,7 +18,7 @@ interface FunHeaderProps {
 const FunHeading = styled.h1<FunHeaderProps>`
   color: var(--color-secondary-med);
   position: relative;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-family: 'Zilla Slab', serif;
   font-weight: 600;
   font-style: italic;
@@ -38,6 +39,14 @@ const FunHeading = styled.h1<FunHeaderProps>`
     background-image: linear-gradient(var(--color-accent), var(--color-accent));
     border-radius: var(--border-radius-sm);
     transform: translateY(5px) skew(-8deg, -1.5deg) scale(1.15);
+  }
+
+  @media ${device.md} {
+    font-size: 3.5rem;
+  }
+
+  @media ${device.lg} {
+    font-size: 4.5rem;
   }
 `
 
