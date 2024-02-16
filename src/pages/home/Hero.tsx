@@ -26,7 +26,7 @@ const HeroBox = styled.div`
 const BrandBox = styled.div`
   display: grid;
   margin: auto;
-  grid-template-columns: 1fr 1fr 0.5fr;
+  grid-template-columns: 1fr 2fr;
   flex: 1 1 0;
   @media ${device.xs} {
   }
@@ -47,7 +47,7 @@ const Img = styled.div`
 
   width: 18rem;
   height: 13rem;
-  transform: translate(3rem, -1.5rem);
+  transform: translate(0.5rem, -1.5rem);
 
   @media ${device.xs} {
     width: 20rem;

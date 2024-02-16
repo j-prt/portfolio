@@ -17,12 +17,16 @@ const colorPalettes = {
 }
 
 const TextQuote = styled.p<TQProps>`
-  max-width: 35rem;
+  max-width: 25rem;
   border-left: 3px solid var(--color-accent-dark);
   padding: 0.5rem 1rem;
   color: var(--color-accent);
   border-radius: var(--border-radius-xs);
   ${props => colorPalettes[props.colorPalette]}
+
+  @media ${device.sm} {
+    max-width: 35rem;
+  }
 
   @media ${device.md} {
     max-width: 30rem;

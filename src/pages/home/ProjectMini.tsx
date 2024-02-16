@@ -10,8 +10,12 @@ import { Link } from 'react-router-dom'
 import { device } from '../../styles/media'
 
 const ProjectDescription = styled.p`
-  max-width: 40rem;
+  max-width: 25rem;
   color: var(--color-accent);
+
+  @media ${device.sm} {
+    max-width: 40rem;
+  }
 
   @media ${device.md} {
     max-width: 30rem;

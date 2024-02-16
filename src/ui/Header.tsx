@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { device } from '../styles/media'
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -16,8 +17,16 @@ const HeaderContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 1rem;
   margin: 0 auto;
+
+  @media ${device.sm} {
+    padding: 1.5rem 2rem;
+  }
+
+  @media ${device.md} {
+    padding: 1.5rem 3rem;
+  }
 `
 
 const Logo = styled(Link)`
