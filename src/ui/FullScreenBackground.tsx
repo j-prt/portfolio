@@ -7,7 +7,8 @@ interface FSBProps {
 
 const sizes = {
   normal: css`
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
   `,
   long: css`
     min-height: 80rem;

@@ -7,33 +7,32 @@ import { device } from '../../styles/media'
 
 const HeroBox = styled.div`
   max-width: var(--home-max-width);
-  height: 90%;
   margin: auto;
-  padding: 1rem 2rem;
+  padding: 6rem 1rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 
   @media ${device.xs} {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 5rem;
-    gap: 3rem;
   }
 
   @media ${device.md} {
     flex-direction: row;
+    gap: 1rem;
   }
 `
 
 const BrandBox = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   margin: auto;
+  grid-template-columns: 1fr 1fr 0.5fr;
   flex: 1 1 0;
   @media ${device.xs} {
-    grid-template-columns: 1fr 1fr 0.5fr;
   }
 
   @media ${device.md} {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `
 
@@ -44,13 +43,15 @@ const Img = styled.div`
     url('./public/cat3.jpg');
   background-size: cover;
   background-position: center;
-
   box-shadow: -1rem 1rem 0rem var(--color-accent);
+
+  width: 18rem;
+  height: 13rem;
+  transform: translate(3rem, -1.5rem);
 
   @media ${device.xs} {
     width: 20rem;
     height: 14rem;
-    transform: translate(3rem, -1.5rem);
   }
 
   @media ${device.md} {
@@ -68,9 +69,9 @@ const About = styled.div`
   flex-direction: column;
   flex: 1 1 0;
   align-items: center;
+  gap: 0.5rem;
 
   @media ${device.xs} {
-    gap: 0.5rem;
   }
 
   @media ${device.lg} {
@@ -80,7 +81,7 @@ const About = styled.div`
 
 const H1 = styled.h1`
   grid-column: 2 / 4;
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-family: 'Zilla Slab', serif;
   font-weight: 600;
   font-style: italic;
@@ -102,9 +103,10 @@ const H2 = styled.p`
   font-weight: 500;
   color: var(--color-accent);
 
+  font-size: 2rem;
+  margin-bottom: 0;
+
   @media ${device.xs} {
-    font-size: 2rem;
-    margin-bottom: 0;
   }
 
   @media ${device.lg} {
@@ -114,10 +116,9 @@ const H2 = styled.p`
 `
 
 const H3 = styled(SubTitle)`
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 
   @media ${device.xs} {
-    margin-bottom: 1rem;
   }
 
   @media ${device.lg} {
@@ -128,10 +129,10 @@ const H3 = styled(SubTitle)`
 const AboutText = styled.p`
   max-width: 30rem;
   color: var(--color-accent);
+  margin-left: 0;
+  margin-bottom: 0.5rem;
 
   @media ${device.xs} {
-    margin-left: 0;
-    margin-bottom: 0.5rem;
   }
 
   @media ${device.lg} {
