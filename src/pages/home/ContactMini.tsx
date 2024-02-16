@@ -20,14 +20,15 @@ const ContactContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
+  padding: 12rem 1rem 2rem;
+
+  gap: 5rem;
 
   color: var(--color-accent);
 
   @media ${device.xs} {
-    flex-direction: column;
     padding: 12rem 2rem 2rem;
-
-    gap: 5rem;
   }
 
   @media ${device.md} {

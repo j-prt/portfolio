@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import Button from './Button'
+import { device } from '../styles/media'
 
 interface SCFProps {
   size?: 'small' | 'large'
@@ -44,7 +45,15 @@ const FormRow = styled.div`
 const AdjacentRows = styled.div`
   display: flex;
   justify-content: flex-start;
-  gap: 3rem;
+  gap: 1rem;
+
+  @media ${device.xs} {
+    gap: 1rem;
+  }
+
+  @media ${device.sm} {
+    gap: 3rem;
+  }
 `
 
 const Label = styled.label`
@@ -57,6 +66,8 @@ const Input = styled.input`
   border-radius: var(--border-radius-xs);
   height: 1.8rem;
   border: none;
+  width: 100%;
+  /* display: inline; */
 `
 
 const TextArea = styled.textarea`
