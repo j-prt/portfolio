@@ -17,6 +17,7 @@ const StyledFeaturedContainer = styled.div`
 
   @media ${device.md} {
     margin: 0;
+    justify-content: space-around;
   }
 
   @media ${device.lg} {

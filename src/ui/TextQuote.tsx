@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { device } from '../styles/media'
 
 interface TQProps {
   children: React.ReactNode
@@ -16,12 +17,16 @@ const colorPalettes = {
 }
 
 const TextQuote = styled.p<TQProps>`
-  max-width: 30rem;
+  max-width: 35rem;
   border-left: 3px solid var(--color-accent-dark);
   padding: 0.5rem 1rem;
   color: var(--color-accent);
   border-radius: var(--border-radius-xs);
   ${props => colorPalettes[props.colorPalette]}
+
+  @media ${device.md} {
+    max-width: 30rem;
+  }
 `
 
 export default TextQuote

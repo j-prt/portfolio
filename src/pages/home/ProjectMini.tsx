@@ -7,10 +7,15 @@ import ButtonBox from '../../ui/ButtonBox'
 import Button from '../../ui/Button'
 import SubTitle from '../../ui/SubTitle'
 import { Link } from 'react-router-dom'
+import { device } from '../../styles/media'
 
 const ProjectDescription = styled.p`
-  max-width: 30rem;
+  max-width: 40rem;
   color: var(--color-accent);
+
+  @media ${device.md} {
+    max-width: 30rem;
+  }
 `
 
 function ProjectMini() {

@@ -41,8 +41,12 @@ const FunHeading = styled.h1<FunHeaderProps>`
     transform: translateY(5px) skew(-8deg, -1.5deg) scale(1.15);
   }
 
+  @media ${device.sm} {
+    font-size: 4.5rem;
+  }
+
   @media ${device.md} {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
   }
 
   @media ${device.lg} {

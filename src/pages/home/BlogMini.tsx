@@ -17,9 +17,7 @@ function BlogMini() {
         <TextQuote colorPalette='blue'>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem exercitationem quod harum
           dolores nostrum sapiente quis asperiores aliquam non qui? Dolorum ipsum maxime facilis
-          nulla, ex officiis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
-          exercitationem quod harum dolores nostrum sapiente quis asperiores aliquam non qui?
-          Dolorum ipsum maxime facilis nulla, ex officiis.
+          nulla, ex officiis. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
         </TextQuote>
         <ButtonBox>
           <Button onPress={() => {}} $styleType='primary'>
