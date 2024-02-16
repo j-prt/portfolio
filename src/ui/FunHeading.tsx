@@ -23,8 +23,8 @@ const FunHeading = styled.h1<FunHeaderProps>`
   font-family: 'Zilla Slab', serif;
   font-weight: 600;
   font-style: italic;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
+  letter-spacing: 2.5px;
+  line-height: 0.9;
   z-index: 1;
   margin-bottom: 1rem;
   text-align: center;
@@ -57,6 +57,8 @@ const FunHeading = styled.h1<FunHeaderProps>`
   @media ${device.sm} {
     font-size: 4.5rem;
     width: max-content;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
   }
 
   @media ${device.md} {
