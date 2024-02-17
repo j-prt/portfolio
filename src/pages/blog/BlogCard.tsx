@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import DateSquare from '../../ui/DateSquare'
 import HeadingSimple from '../../ui/HeadingSimple'
 import { BlogData } from '../../types'
+import { device } from '../../styles/media'
 
 interface BlogCardProps {
   blogData: BlogData
@@ -9,8 +10,10 @@ interface BlogCardProps {
 
 const StyledBlogCard = styled.div`
   display: flex;
-  gap: 4rem;
+  flex-direction: column;
+  gap: 0.4rem;
   align-items: center;
+  text-align: center;
   padding-bottom: 5rem;
 
   &:not(:last-child) {
@@ -24,12 +27,26 @@ const StyledBlogCard = styled.div`
       border-bottom: 0.5px solid var(--color-accent-light);
     }
   }
+
+  @media ${device.sm} {
+    flex-direction: row;
+    gap: 2.5rem;
+    text-align: left;
+  }
+
+  @media ${device.md} {
+    gap: 4rem;
+  }
 `
 
 const BlogCardBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+
+  @media ${device.md} {
+    gap: 1.5rem;
+  }
 `
 
 const BlogIntro = styled.p`

@@ -36,7 +36,11 @@ const widths = {
       font-size: 4.5rem;
     }
   `,
-  solo: css``,
+  solo: css`
+    @media ${device.sm} {
+      font-size: 5rem;
+    }
+  `,
 }
 
 const FunHeading = styled.h1<FunHeadingProps>`
