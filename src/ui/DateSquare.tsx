@@ -33,8 +33,6 @@ const Year = styled.p`
 
   @media ${device.md} {
     font-size: 3.5rem;
-    line-height: 0.8;
-    letter-spacing: -3px;
   }
 `
 const MonthDay = styled.p`
@@ -50,8 +48,6 @@ const MonthDay = styled.p`
 
   @media ${device.md} {
     font-size: 3.2rem;
-    line-height: 0.8;
-    letter-spacing: -3px;
   }
 `
 

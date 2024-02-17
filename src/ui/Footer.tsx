@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import IconButton from './IconButton'
+import { device } from '../styles/media'
 
 const StyledFooter = styled.footer`
   position: absolute;
@@ -10,9 +11,14 @@ const StyledFooter = styled.footer`
   align-items: center;
   height: 5rem;
   width: 100%;
-  padding: 2rem 5rem;
+  padding: 2rem 2rem;
   gap: 1.5rem;
   background-color: transparent;
+
+  @media ${device.sm} {
+    font-size: 3.2rem;
+    padding: 2rem 4rem;
+  }
 `
 
 const FooterText = styled.p`
