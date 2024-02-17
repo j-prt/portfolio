@@ -18,6 +18,7 @@ const sizes = {
 const SubTitle = styled.p<SubTitleProps>`
   font-weight: 300;
   color: var(--color-accent-dark);
+  text-align: center;
   ${props => sizes[props.size || 'medium']}
 `
 

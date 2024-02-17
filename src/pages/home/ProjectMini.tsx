@@ -26,7 +26,7 @@ function ProjectMini() {
   return (
     <FeaturedContainer>
       <CopyBox>
-        <FunHeader>Project Spotlight</FunHeader>
+        <FunHeader width='shared'>Project Spotlight</FunHeader>
         <SubTitle>Cronicle</SubTitle>
         <ProjectDescription>
           Cronicle is a system designed for gathering web articles, uploading them to the cloud, and

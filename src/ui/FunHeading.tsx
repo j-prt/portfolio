@@ -1,9 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { device } from '../styles/media'
 
-interface FunHeaderProps {
+interface FunHeadingProps {
   children: React.ReactNode
+  width?: 'shared' | 'solo'
 }
 
 // const sides = {
@@ -15,7 +16,30 @@ interface FunHeaderProps {
 //   `,
 // }
 
-const FunHeading = styled.h1<FunHeaderProps>`
+const widths = {
+  shared: css`
+    @media ${device.xs} {
+    }
+
+    @media ${device.sm} {
+      font-size: 4.5rem;
+      width: max-content;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    @media ${device.md} {
+      font-size: 3.75rem;
+    }
+
+    @media ${device.lg} {
+      font-size: 4.5rem;
+    }
+  `,
+  solo: css``,
+}
+
+const FunHeading = styled.h1<FunHeadingProps>`
   color: var(--color-secondary-med);
   width: min-content;
   position: relative;
@@ -40,34 +64,11 @@ const FunHeading = styled.h1<FunHeaderProps>`
     height: 100%;
     background-image: linear-gradient(var(--color-accent), var(--color-accent));
     border-radius: var(--border-radius-sm);
-    /* width: 80%;
-    transform: translateY(5px) translateX(12%) skew(-8deg, -1.5deg) scale(1.15); */
     width: 100%;
     transform: translateY(5px) skew(-8deg, -1.5deg) scale(1.15);
-
-    /* @media (min-width: 395px) {
-      width: 100%;
-      transform: translateY(5px) skew(-8deg, -1.5deg) scale(1.15);
-    } */
   }
 
-  @media ${device.xs} {
-  }
-
-  @media ${device.sm} {
-    font-size: 4.5rem;
-    width: max-content;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-  }
-
-  @media ${device.md} {
-    font-size: 3.75rem;
-  }
-
-  @media ${device.lg} {
-    font-size: 4.5rem;
-  }
+  ${props => widths[props.width || 'solo']}
 `
 
 export default FunHeading

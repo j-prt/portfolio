@@ -54,6 +54,11 @@ const Img = styled.div`
     height: 14rem;
   }
 
+  @media ${device.sm} {
+    width: 21rem;
+    height: 15rem;
+  }
+
   @media ${device.md} {
     transform: translate(3rem, -1.5rem);
   }
@@ -93,6 +98,10 @@ const H1 = styled.h1`
 
   @media ${device.xs} {
     font-size: 4rem;
+  }
+
+  @media ${device.sm} {
+    font-size: 4.5rem;
   }
 
   @media ${device.lg} {
