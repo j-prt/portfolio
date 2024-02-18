@@ -68,11 +68,15 @@ const Arrow = styled.p<ArrowProps>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
+  font-size: 1rem;
   color: var(--color-accent);
   cursor: pointer;
 
-  ${props => (props.side == 'left' ? 'left: 2px' : 'right: 2px')}
+  ${props => (props.side == 'left' ? 'left: 2px' : 'right: 2px')};
+
+  @media ${device.sm} {
+    font-size: 2rem;
+  }
 `
 
 const imgs = ['public/getrecd1.jpg', 'public/getrecd2.jpg']

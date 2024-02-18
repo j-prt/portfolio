@@ -15,7 +15,7 @@ function About() {
   return (
     <FullScreenBackground size='long'>
       <MainContainer>
-        <AboutTitle>a yo wassup </AboutTitle>
+        <AboutTitle>About</AboutTitle>
         <AboutText>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid suscipit quibusdam
           ratione assumenda modi asperiores, molestiae et doloremque eaque delectus, odit, aliquam
