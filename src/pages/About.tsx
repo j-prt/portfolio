@@ -4,7 +4,9 @@ import ContactForm from '../ui/ContactForm'
 import MainContainer from '../ui/MainContainer'
 import HeadingSimple from '../ui/HeadingSimple'
 
-const AboutText = styled.p``
+const AboutText = styled.p`
+  max-width: 50rem;
+`
 const AboutTitle = styled(HeadingSimple)`
   font-size: 4rem;
 `

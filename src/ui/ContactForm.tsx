@@ -13,8 +13,9 @@ const sizes = {
     width: 100%;
   `,
   large: css`
-    height: 40rem;
-    width: 50rem;
+    height: 30rem;
+    max-width: 50rem;
+    width: 100%;
   `,
 }
 
