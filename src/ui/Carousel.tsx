@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { device } from '../styles/media'
 
 interface ImgProps {
   url: string
@@ -12,20 +13,35 @@ interface ArrowProps {
 
 const StyledCarousel = styled.div`
   position: relative;
-  width: 45rem;
-  height: 30rem;
-  padding: 2rem 2rem;
+  width: 100%;
+  max-width: 35rem;
+  aspect-ratio: 35/24;
+  padding: 1rem 1rem;
 
   border: 0.5px solid var(--color-accent);
   box-shadow: 0rem 0rem 0.4rem 0rem var(--color-accent);
   background-color: rgba(var(--color-secondary-med-rgb), 0.3);
   border-radius: var(--border-radius-md);
+
+  @media ${device.sm} {
+    width: 35rem;
+    height: 24rem;
+    padding: 2rem 2rem;
+  }
+
+  @media ${device.md} {
+    width: 45rem;
+    height: 30rem;
+    padding: 2rem 2rem;
+  }
 `
 
 const CarouselImg = styled.div<ImgProps>`
   position: relative;
-  height: 26rem;
-  width: 40rem;
+  /* height: 26rem; */
+  /* width: 40rem; */
+  height: 100%;
+  width: 98%;
   margin: auto;
   ${props => `background-image: url(${props.url})`};
 

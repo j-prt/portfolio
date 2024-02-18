@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../styles/media'
 
 interface MCProps {
   gap?: number
@@ -6,7 +7,7 @@ interface MCProps {
 }
 
 const MainContainer = styled.div<MCProps>`
-  padding: 6rem 2rem;
+  padding: 6rem 1rem;
   margin: 0 auto;
   max-width: var(--home-max-width);
   display: flex;
@@ -16,6 +17,10 @@ const MainContainer = styled.div<MCProps>`
 
   ${props => (props.relative ? 'position: relative' : '')};
   gap: ${props => (props.gap || 3) + 'rem'};
+
+  @media ${device.sm} {
+    padding: 6rem 2rem;
+  }
 `
 
 export default MainContainer
