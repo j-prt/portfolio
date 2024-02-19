@@ -67,8 +67,11 @@ function ContactMini() {
         <ContactInfoBox>
           <ContactHeader>Contact</ContactHeader>
           <ContactAbout>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab repellendus modi placeat,
-            vitae sequi maxime, iure laborum?
+            Want to get in touch? Use the form and I&apos;ll get back to you at the email you
+            provide. Alternatively, you can email me&nbsp;
+            <a style={{ color: '#69aae6' }} href='mailto:joe.peart.dev@gmail.com'>
+              directly.
+            </a>
           </ContactAbout>
         </ContactInfoBox>
         <ContactForm />

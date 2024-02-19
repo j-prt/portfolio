@@ -30,9 +30,9 @@ const StyledCarousel = styled.div`
   }
 
   @media ${device.md} {
+    max-width: 45rem;
     width: 45rem;
     height: 30rem;
-    padding: 2rem 2rem;
   }
 `
 
@@ -67,7 +67,7 @@ const CarouselImg = styled.div<ImgProps>`
 const Arrow = styled.p<ArrowProps>`
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) scaleY(1.5);
   font-size: 1rem;
   color: var(--color-accent);
   cursor: pointer;
@@ -76,6 +76,7 @@ const Arrow = styled.p<ArrowProps>`
 
   @media ${device.sm} {
     font-size: 2rem;
+    transform: translateY(-50%) scaleY(1);
   }
 `
 
