@@ -4,6 +4,21 @@ import ContactForm from '../ui/ContactForm'
 import MainContainer from '../ui/MainContainer'
 import HeadingSimple from '../ui/HeadingSimple'
 
+const AboutImg = styled.div`
+  width: 100%;
+  max-width: 32rem;
+  aspect-ratio: 32/20;
+  border-radius: var(--border-radius-md);
+  background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
+    url('./public/about999.jpg');
+  /* background-image: linear-gradient(rgba(30, 81, 40, 0.55), rgba(30, 81, 40, 0.55)),
+    url('./public/profile1.jpg'); */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1rem 1rem 0rem var(--color-accent);
+  transform: translateX(-0.5rem);
+`
+
 const AboutText = styled.p`
   max-width: 45rem;
 `
@@ -16,6 +31,7 @@ function About() {
     <FullScreenBackground size='long'>
       <MainContainer>
         <AboutTitle>About</AboutTitle>
+        <AboutImg />
         <AboutText>
           Hey again! Joseph here. I&apos;m a software developer specializing in machine learning and
           data science. Western Canada born and raised; currently living in Westbank, BC.

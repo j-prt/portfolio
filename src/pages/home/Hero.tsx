@@ -14,9 +14,6 @@ const HeroBox = styled.div`
   align-items: center;
   gap: 3rem;
 
-  @media ${device.xs} {
-  }
-
   @media ${device.md} {
     flex-direction: row;
     gap: 1rem;
@@ -28,8 +25,6 @@ const BrandBox = styled.div`
   margin: auto;
   grid-template-columns: 1fr 2fr;
   flex: 1 1 0;
-  @media ${device.xs} {
-  }
 
   @media ${device.md} {
     grid-template-columns: 1fr 1fr 1fr;
@@ -40,7 +35,9 @@ const Img = styled.div`
   grid-column: 1/3;
   border-radius: var(--border-radius-md);
   background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
-    url('./public/cat3.jpg');
+    url('./public/profile1.jpg');
+  /* background-image: linear-gradient(rgba(30, 81, 40, 0.55), rgba(30, 81, 40, 0.55)),
+    url('./public/profile1.jpg'); */
   background-size: cover;
   background-position: center;
   box-shadow: -1rem 1rem 0rem var(--color-accent);
@@ -76,9 +73,6 @@ const About = styled.div`
   align-items: center;
   gap: 0.5rem;
 
-  @media ${device.xs} {
-  }
-
   @media ${device.lg} {
     gap: 0.8rem;
   }
@@ -111,27 +105,18 @@ const H1 = styled.h1`
 const H2 = styled.p`
   font-weight: 500;
   color: var(--color-accent);
-
   font-size: 2rem;
-  margin-bottom: 0;
-
-  @media ${device.xs} {
-  }
 
   @media ${device.lg} {
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
   }
 `
 
 const H3 = styled(SubTitle)`
   margin-bottom: 1rem;
 
-  @media ${device.xs} {
-  }
-
   @media ${device.lg} {
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
   }
 `
 
@@ -140,9 +125,6 @@ const AboutText = styled.p`
   color: var(--color-accent);
   margin-left: 0;
   margin-bottom: 0.5rem;
-
-  @media ${device.xs} {
-  }
 
   @media ${device.lg} {
     margin-bottom: 1rem;
