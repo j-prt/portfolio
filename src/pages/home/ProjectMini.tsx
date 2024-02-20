@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import FeaturedContainer from '../../ui/FeaturedContainer'
 import FeaturedImg from '../../ui/FeaturedImg'
-import FunHeader from '../../ui/FunHeading'
+import FunHeading from '../../ui/FunHeading'
 import CopyBox from '../../ui/CopyBox'
 import ButtonBox from '../../ui/ButtonBox'
 import Button from '../../ui/Button'
@@ -26,7 +26,7 @@ function ProjectMini() {
   return (
     <FeaturedContainer>
       <CopyBox>
-        <FunHeader width='shared'>Project Spotlight</FunHeader>
+        <FunHeading width='shared'>Project Spotlight</FunHeading>
         <SubTitle>Cronicle</SubTitle>
         <ProjectDescription>
           Cronicle is a system designed for gathering web articles, uploading them to the cloud, and

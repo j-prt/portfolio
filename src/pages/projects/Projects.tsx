@@ -1,6 +1,6 @@
 import { ProjectData } from '../../types'
 import FullScreenBackground from '../../ui/FullScreenBackground'
-import FunHeader from '../../ui/FunHeading'
+import FunHeading from '../../ui/FunHeading'
 import ListContainer from '../../ui/ListContainer'
 import MainContainer from '../../ui/MainContainer'
 import Rule from '../../ui/Rule'
@@ -31,7 +31,7 @@ function Projects() {
   return (
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
-        <FunHeader>Projects!</FunHeader>
+        <FunHeading>Projects!</FunHeading>
         <SubTitle>Some of the things I made</SubTitle>
         <Rule type='bold' />
         <ListContainer>

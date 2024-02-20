@@ -1,6 +1,6 @@
 import { BlogData } from '../../types'
 import FullScreenBackground from '../../ui/FullScreenBackground'
-import FunHeader from '../../ui/FunHeading'
+import FunHeading from '../../ui/FunHeading'
 import MainContainer from '../../ui/MainContainer'
 import Rule from '../../ui/Rule'
 import SubTitle from '../../ui/SubTitle'
@@ -26,7 +26,7 @@ function Blog() {
   return (
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
-        <FunHeader>Blog!</FunHeader>
+        <FunHeading>Blog!</FunHeading>
         <SubTitle>A rest stop for passing thoughts</SubTitle>
         <Rule type='bold' />
         <ListContainer>
