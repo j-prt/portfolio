@@ -80,7 +80,7 @@ const Arrow = styled.p<ArrowProps>`
   }
 `
 
-const imgs = ['public/getrecd1.jpg', 'public/getrecd2.jpg']
+const imgs = ['public/gr5.jpg', 'public/gr3.jpg', 'public/gr4.jpg']
 
 function Carousel() {
   const [urlIndex, setUrlIndex] = useState(0)
