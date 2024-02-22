@@ -11,6 +11,10 @@ interface ArrowProps {
   side: 'left' | 'right'
 }
 
+interface CarouselProps {
+  imgArray: string[]
+}
+
 const StyledCarousel = styled.div`
   position: relative;
   width: 100%;
@@ -38,8 +42,6 @@ const StyledCarousel = styled.div`
 
 const CarouselImg = styled.div<ImgProps>`
   position: relative;
-  /* height: 26rem; */
-  /* width: 40rem; */
   height: 100%;
   width: 98%;
   margin: auto;
@@ -60,8 +62,6 @@ const CarouselImg = styled.div<ImgProps>`
       rgba(var(--color-secondary-med-rgb), 0.2)
     );
   }
-  /* background-repeat: no-repeat; */
-  /* flex: 1 0 100%; */
 `
 
 const Arrow = styled.p<ArrowProps>`
@@ -80,21 +80,19 @@ const Arrow = styled.p<ArrowProps>`
   }
 `
 
-const imgs = ['public/gr5.jpg', 'public/gr3.jpg', 'public/gr4.jpg']
-
-function Carousel() {
+function Carousel({ imgArray }: CarouselProps) {
   const [urlIndex, setUrlIndex] = useState(0)
 
   function handleClickBack() {
     if (urlIndex === 0) {
-      setUrlIndex(imgs.length - 1)
+      setUrlIndex(imgArray.length - 1)
     } else {
       setUrlIndex(index => index - 1)
     }
   }
 
   function handleClickForward() {
-    if (urlIndex === imgs.length - 1) {
+    if (urlIndex === imgArray.length - 1) {
       setUrlIndex(0)
     } else {
       setUrlIndex(index => index + 1)
@@ -109,8 +107,7 @@ function Carousel() {
       <Arrow side='right' onClick={handleClickForward}>
         <IoIosArrowForward />
       </Arrow>
-      <CarouselImg url={imgs[urlIndex]} />
-      {/* <CarouselImg style={{ backgroundImage: `url(${imgs[urlIndex]})` }} /> */}
+      <CarouselImg url={imgArray[urlIndex]} />
     </StyledCarousel>
   )
 }

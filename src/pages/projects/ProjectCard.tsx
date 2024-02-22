@@ -46,7 +46,7 @@ function ProjectCard({ projectData }: ProjectCardProps) {
           )}
         </SubTitle>
       </FlexColumn>
-      <Carousel />
+      <Carousel imgArray={projectData.imgs} />
       <Paragraph>{projectData.description}</Paragraph>
       <ButtonBox>
         {projectData.liveLink && (

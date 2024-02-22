@@ -15,6 +15,7 @@ const projects: ProjectData[] = [
     description:
       "Cronicle is a system designed for gathering web articles, uploading them to the cloud, and generating curated emails using AI predictions. The project's workflow involves multiple stages: data collection with custom scrapers targeting selected websites; storage and preprocessing in the cloud; and finally, selection and delivery, with the option to drop in different NLP models for AI inference stage.",
     sourceLink: 'https://github.com/j-prt/cronicle',
+    imgs: ['public/cronicle1.jpg', 'public/cronicle2.jpg', 'public/cronicle3.jpg'],
   },
   {
     date: '2022',
@@ -24,6 +25,7 @@ const projects: ProjectData[] = [
       "GetRec'd is a board game recommendation engine based on data scraped from BoardGameGeek, which is kind of like a wiki for board games. They have a comprehensive collection of first-party data and community-based metrics around games in the database, which made it a great source for feature engineering. After a collecting data and cleaning it, a K-Nearest Neighbors model is used to identify similar games based on distance in the vector space.",
     liveLink: 'https://google.com',
     sourceLink: 'https://github.com/j-prt/GetRecd',
+    imgs: ['public/gr5.jpg', 'public/gr3.jpg', 'public/gr4.jpg'],
   },
 ]
 

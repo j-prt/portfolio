@@ -12,4 +12,5 @@ export interface ProjectData {
   description: string
   liveLink?: string
   sourceLink?: string
+  imgs: string[]
 }
