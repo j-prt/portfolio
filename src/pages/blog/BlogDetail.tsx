@@ -5,8 +5,8 @@ import DateLine from '../../ui/DateLine'
 import Paragraph from '../../ui/Paragraph'
 import styled from 'styled-components'
 import { IoMdArrowBack } from 'react-icons/io'
-import { Link } from 'react-router-dom'
-import { BlogData } from '../../types'
+import { Link, useParams } from 'react-router-dom'
+import { useBlogById } from './useBlogById'
 
 const Back = styled.div`
   width: 100%;
@@ -23,20 +23,23 @@ const Content = styled.div`
   flex-direction: column;
   gap: 2rem;
 `
+// const blog: BlogData = {
+//   date: new Date('2024/02/13'),
+//   title: 'Initial Commit',
+//   intro: '', // used in the /blog route
+//   body: `Great title for an inaugural blogpost, right?
+//   I like the idea of blogging, but I haven't decided on a structure or a framework. I have a loose set of goals, but no project requirements. Mainly, I wanted to practise designing pages and layouts — that's what got me to make this site. I expect most posts will be fairly short impressions on media or reflections on something I learned recently.
+//   Thanks for dropping by.`,
+//   id: 2342,
+// }
 
-// TODO: write blogs. Also data will be served from backend
-// as json, so the entire logic here needs to be implemented.
-
-const blog: BlogData = {
-  date: new Date('2024/02/13'),
-  title: 'Initial Commit',
-  intro: '', // used in the /blog route
-  body: `Great title for an inaugural blogpost, right?
-  I like the idea of blogging, but I haven't decided on a structure or a framework. I have a loose set of goals, but no project requirements. Mainly, I wanted to practise designing pages and layouts — that's what got me this far. I expect most posts will be fairly short impressions on media or reflections on something I learned recently.
-  Thanks for dropping by.`,
-}
+// TODO
+// URL slugs
 
 function BlogDetail() {
+  const { id } = useParams()
+  const { isLoading, blog } = useBlogById(Number(id))
+
   return (
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
@@ -45,21 +48,27 @@ function BlogDetail() {
             <IoMdArrowBack />
           </Link>
         </Back>
-        <DateLine>
-          {blog.date
-            .toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'short',
-              day: '2-digit',
-            })
-            .toUpperCase()}
-        </DateLine>
-        <HeadingSimple>{blog.title}</HeadingSimple>
-        <Content>
-          {blog.body.split('\n').map((p, i) => (
-            <Paragraph key={i}>{p}</Paragraph>
-          ))}
-        </Content>
+        {isLoading || !blog ? (
+          <div></div>
+        ) : (
+          <>
+            <DateLine>
+              {new Date(blog.date)
+                .toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: '2-digit',
+                })
+                .toUpperCase()}
+            </DateLine>
+            <HeadingSimple>{blog.title}</HeadingSimple>
+            <Content>
+              {blog.body.split('\n').map((p, i) => (
+                <Paragraph key={i}>{p}</Paragraph>
+              ))}
+            </Content>
+          </>
+        )}
       </MainContainer>
     </FullScreenBackground>
   )

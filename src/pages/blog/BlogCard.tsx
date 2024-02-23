@@ -3,6 +3,7 @@ import DateSquare from '../../ui/DateSquare'
 import HeadingSimple from '../../ui/HeadingSimple'
 import { BlogData } from '../../types'
 import { device } from '../../styles/media'
+import { Link } from 'react-router-dom'
 
 interface BlogCardProps {
   blogData: BlogData
@@ -63,10 +64,12 @@ function BlogCard({ blogData }: BlogCardProps) {
   return (
     <StyledBlogCard>
       <DateSquare year={dateString.slice(-4)} monthday={dateString.slice(0, 5)} />
-      <BlogCardBox>
-        <HeadingSimple>{blogData.title}</HeadingSimple>
-        <BlogIntro>{blogData.intro}</BlogIntro>
-      </BlogCardBox>
+      <Link to={`/blog/${blogData.id}`}>
+        <BlogCardBox>
+          <HeadingSimple>{blogData.title}</HeadingSimple>
+          <BlogIntro>{blogData.intro}</BlogIntro>
+        </BlogCardBox>
+      </Link>
     </StyledBlogCard>
   )
 }

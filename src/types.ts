@@ -3,6 +3,7 @@ export interface BlogData {
   title: string
   intro: string
   body: string
+  id: number
 }
 
 export interface ProjectData {

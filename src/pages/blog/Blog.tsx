@@ -31,7 +31,7 @@ function Blog() {
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
         <FunHeading>Blog!</FunHeading>
-        <SubTitle>A rest stop for passing thoughts</SubTitle>
+        <SubTitle>Some things I thought about</SubTitle>
         <Rule type='bold' />
         <ListContainer>
           {isLoading ? <Loader /> : blogs?.map(blog => <BlogCard key={blog.id} blogData={blog} />)}

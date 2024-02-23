@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import { BlogData } from '../types'
 
 const supabaseUrl = 'https://iictbhonfyzdaiiucfwf.supabase.co'
 // Anonymous public key - no write access
@@ -7,7 +8,7 @@ const supabaseKey =
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
 
-export async function getBlogs() {
+export async function getBlogs(): Promise<BlogData[]> {
   const { data: blogposts, error } = await supabase
     .from('blogposts')
     .select('*')
@@ -19,4 +20,15 @@ export async function getBlogs() {
   }
 
   return blogposts
+}
+
+export async function getOneBlog(id: number): Promise<BlogData> {
+  const { data: blogposts, error } = await supabase.from('blogposts').select().eq('id', id)
+
+  if (error) {
+    console.log(error)
+    throw new Error(`Couldn't fetch blog with id ${id}`)
+  }
+
+  return blogposts[0]
 }
