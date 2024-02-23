@@ -1,11 +1,23 @@
 import styled, { css } from 'styled-components'
 import Button from './Button'
 import { device } from '../styles/media'
-import { FieldErrors, FieldValues, useForm } from 'react-hook-form'
+import { FieldError, FieldErrors, FieldValues, useForm } from 'react-hook-form'
 import { MESSAGE_LIMIT } from '../utils/constants'
+import { IoAlertCircleOutline } from 'react-icons/io5'
 
 interface SCFProps {
   size?: 'small' | 'large'
+}
+
+interface LabelProps {
+  $error: FieldError | undefined
+}
+
+interface FormTypes {
+  firstname: string
+  lastname: string
+  email: string
+  message: string
 }
 
 const sizes = {
@@ -59,9 +71,19 @@ const AdjacentRows = styled.div`
   }
 `
 
-const Label = styled.label`
+const Label = styled.label<LabelProps>`
   font-weight: 500;
   letter-spacing: 0.5px;
+
+  ${props =>
+    props.$error &&
+    css`
+      & + input,
+      & + textarea {
+        outline: 2px solid red;
+        outline-offset: 2px;
+      }
+    `}
 `
 
 const Input = styled.input`
@@ -82,7 +104,7 @@ const TextArea = styled.textarea`
 `
 
 function ContactForm({ size }: SCFProps) {
-  const { register, handleSubmit, watch, reset, formState } = useForm()
+  const { register, handleSubmit, watch, reset, formState } = useForm<FormTypes>()
   const { errors } = formState
   const messageText = watch('message', '')
 
@@ -93,13 +115,15 @@ function ContactForm({ size }: SCFProps) {
   function onError(errors: FieldErrors<FieldValues>) {
     console.log(errors)
   }
-  if (errors) console.log(errors)
+  if (errors) console.log(errors?.firstname?.message)
 
   return (
     <StyledContactForm onSubmit={handleSubmit(onSubmit, onError)} size={size}>
       <AdjacentRows>
         <FormRow>
-          <Label>First Name</Label>
+          <Label $error={errors?.firstname}>
+            First Name&nbsp;{errors?.firstname && <IoAlertCircleOutline />}
+          </Label>
           <Input
             type='text'
             id='firstname'
@@ -110,7 +134,9 @@ function ContactForm({ size }: SCFProps) {
           />
         </FormRow>
         <FormRow>
-          <Label>Last Name</Label>
+          <Label $error={errors?.lastname}>
+            Last Name&nbsp;{errors?.lastname && <IoAlertCircleOutline />}
+          </Label>
           <Input
             type='text'
             id='lastname'
@@ -122,21 +148,26 @@ function ContactForm({ size }: SCFProps) {
         </FormRow>
       </AdjacentRows>
       <FormRow>
-        <Label>Email</Label>
+        <Label $error={errors?.email}>Email&nbsp;{errors?.email && <IoAlertCircleOutline />}</Label>
         <Input
           type='email'
           id='email'
           disabled={false}
           {...register('email', {
             required: '!!',
+            pattern: {
+              value: /\S+@\S+\.\S+/,
+              message: 'Entered value does not match email format',
+            },
           })}
         />
       </FormRow>
       <FormRow>
-        <Label>
+        <Label $error={errors?.message}>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <span>What&apos;s up?</span>
             <span>
+              {errors?.message && <IoAlertCircleOutline />}&nbsp;
               {messageText.length} / {MESSAGE_LIMIT}
             </span>
           </div>
