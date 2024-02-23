@@ -4,7 +4,7 @@ import { device } from '../styles/media'
 
 interface TQProps {
   children: React.ReactNode
-  colorPalette: 'blue' | 'green'
+  $colorPalette: 'blue' | 'green'
 }
 
 const colorPalettes = {
@@ -22,7 +22,7 @@ const TextQuote = styled.p<TQProps>`
   padding: 0.5rem 1rem;
   color: var(--color-accent);
   border-radius: var(--border-radius-xs);
-  ${props => colorPalettes[props.colorPalette]}
+  ${props => colorPalettes[props.$colorPalette]}
 
   @media ${device.sm} {
     max-width: 35rem;

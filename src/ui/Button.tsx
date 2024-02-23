@@ -3,8 +3,8 @@ import React from 'react'
 
 interface StyleProps {
   $styleType?: 'primary' | 'secondary'
-  hoverEffect?: 'glow' | 'simple'
-  size?: 'medium' | 'large'
+  $hoverEffect?: 'glow' | 'simple'
+  $size?: 'medium' | 'large'
 }
 
 interface ButtonProps extends StyleProps {
@@ -53,16 +53,21 @@ const StyledButton = styled.button<StyleProps>`
   border: none;
   transition: all 0.3s;
   cursor: pointer;
-  ${props => sizes[props.size || 'medium']};
+  ${props => sizes[props.$size || 'medium']};
   ${props => variations[props.$styleType || 'primary']};
   &:hover {
-    ${props => hoverEffect[props.hoverEffect || 'glow']};
+    ${props => hoverEffect[props.$hoverEffect || 'glow']};
   }
 `
 
-function Button({ children, onPress, $styleType, hoverEffect, size }: ButtonProps) {
+function Button({ children, onPress, $styleType, $hoverEffect, $size }: ButtonProps) {
   return (
-    <StyledButton onClick={onPress} $styleType={$styleType} hoverEffect={hoverEffect} size={size}>
+    <StyledButton
+      onClick={onPress}
+      $styleType={$styleType}
+      $hoverEffect={$hoverEffect}
+      $size={$size}
+    >
       {children}
     </StyledButton>
   )

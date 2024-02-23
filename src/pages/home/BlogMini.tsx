@@ -10,11 +10,11 @@ import SubTitle from '../../ui/SubTitle'
 function BlogMini() {
   return (
     <FeaturedContainer>
-      <FeaturedImg side='left' brightness='dark' imgUrl='./public/notebook.jpg' />
+      <FeaturedImg $side='left' $brightness='dark' $imgUrl='./public/notebook.jpg' />
       <CopyBox>
         <FunHeading width='shared'>Featured Blog</FunHeading>
         <SubTitle>Title of blogpost featured</SubTitle>
-        <TextQuote colorPalette='blue'>
+        <TextQuote $colorPalette='blue'>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem exercitationem quod harum
           dolores nostrum sapiente quis asperiores aliquam non qui? Dolorum ipsum maxime facilis
           nulla, ex officiis. Lorem, ipsum dolor sit amet consectetur adipisicing elit.

@@ -5,10 +5,6 @@ import React, { forwardRef } from 'react'
 import ExternalLink from '../../ui/ExternalLink'
 import FlexColumn from '../../ui/FlexColumn'
 
-interface ContactMiniProps {
-  refProp: React.RefObject<HTMLElement>
-}
-
 const StyledContactMini = styled.section`
   height: 70rem;
   background-image: radial-gradient(
@@ -61,9 +57,12 @@ const ContactAbout = styled.p`
   letter-spacing: 0.8px;
 `
 
-const ContactMini = forwardRef(function ContactMini({ refProp }: ContactMiniProps) {
+const ContactMini = forwardRef(function ContactMini(
+  _props: unknown,
+  ref: React.ForwardedRef<HTMLElement>
+) {
   return (
-    <StyledContactMini ref={refProp} id='contact'>
+    <StyledContactMini ref={ref} id='contact'>
       <ContactContainer>
         <ContactInfoBox>
           <ContactHeader>Contact</ContactHeader>

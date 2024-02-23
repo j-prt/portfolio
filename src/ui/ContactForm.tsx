@@ -103,8 +103,8 @@ function ContactForm({ size }: SCFProps) {
         onPress={e => {
           e.preventDefault()
         }}
-        size='large'
-        hoverEffect='simple'
+        $size='large'
+        $hoverEffect='simple'
       >
         Submit
       </Button>

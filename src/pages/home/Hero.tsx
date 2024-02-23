@@ -7,6 +7,8 @@ import { device } from '../../styles/media'
 import { Link } from 'react-router-dom'
 import React from 'react'
 import FlexColumn from '../../ui/FlexColumn'
+import ExternalLink from '../../ui/ExternalLink'
+import { URLS } from '../../utils/constants'
 
 interface HeroProps {
   contactRef: React.RefObject<HTMLElement>
@@ -153,7 +155,8 @@ function Hero({ contactRef }: HeroProps) {
             <br />
             <br />
             If you&apos;re interested in working together, curious about what I do, or even just
-            want to chat, you can use the contact form below or connect with me on LinkedIn. ✌︎
+            want to chat, you can use the contact form below or connect with me on{' '}
+            <ExternalLink href={URLS.linkedin}>LinkedIn</ExternalLink>. ✌︎
           </AboutText>
           <ButtonBox>
             <Button onPress={scrollToContact} $styleType='primary'>

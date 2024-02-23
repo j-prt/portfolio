@@ -4,6 +4,7 @@ import ContactForm from '../ui/ContactForm'
 import MainContainer from '../ui/MainContainer'
 import HeadingSimple from '../ui/HeadingSimple'
 import ExternalLink from '../ui/ExternalLink'
+import { URLS } from '../utils/constants'
 
 const AboutImg = styled.div`
   width: 100%;
@@ -56,7 +57,7 @@ function About() {
           <br />
           Drop me a line using the contact form below, send me an{' '}
           <ExternalLink href='mailto:joe.peart.dev@gmail.com'>email</ExternalLink> or connect with
-          me on LinkedIn!
+          me on <ExternalLink href={URLS.linkedin}>LinkedIn</ExternalLink>!
         </AboutText>
         <ContactForm size='large' />
       </MainContainer>

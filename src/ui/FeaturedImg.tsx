@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components'
 import { device } from '../styles/media'
 
 interface SFIProps {
-  side: 'right' | 'left'
-  brightness: 'medium' | 'dark'
-  imgUrl: string
+  $side: 'right' | 'left'
+  $brightness: 'medium' | 'dark'
+  $imgUrl: string
 }
 
 const sides = {
@@ -25,12 +25,12 @@ const levels = {
 const FeaturedImg = styled.div<SFIProps>`
   height: 26rem;
   width: 18rem;
-  background-image: linear-gradient(${props => levels[props.brightness]}),
-    url(${props => props.imgUrl});
+  background-image: linear-gradient(${props => levels[props.$brightness]}),
+    url(${props => props.$imgUrl});
   background-size: cover;
   background-position: center;
   border-radius: var(--border-radius-sm);
-  ${props => sides[props.side]}
+  ${props => sides[props.$side]}
   display: none;
 
   @media ${device.md} {

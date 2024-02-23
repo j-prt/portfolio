@@ -12,7 +12,7 @@ function Home() {
     <div>
       <Hero contactRef={contactRef} />
       <Featured />
-      <ContactMini refProp={contactRef} />
+      <ContactMini ref={contactRef} />
     </div>
   )
 }
