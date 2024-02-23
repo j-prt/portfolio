@@ -6,6 +6,7 @@ import SubTitle from '../../ui/SubTitle'
 import BlogCard from './BlogCard'
 import ListContainer from '../../ui/ListContainer'
 import { useBlogs } from './useBlogs'
+import Loader from '../../ui/Loader'
 
 // const blogs: BlogData[] = [
 //   {
@@ -33,7 +34,7 @@ function Blog() {
         <SubTitle>A rest stop for passing thoughts</SubTitle>
         <Rule type='bold' />
         <ListContainer>
-          {isLoading ? 'oh no' : blogs?.map(blog => <BlogCard key={blog.id} blogData={blog} />)}
+          {isLoading ? <Loader /> : blogs?.map(blog => <BlogCard key={blog.id} blogData={blog} />)}
         </ListContainer>
       </MainContainer>
     </FullScreenBackground>
