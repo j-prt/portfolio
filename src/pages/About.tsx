@@ -3,6 +3,7 @@ import FullScreenBackground from '../ui/FullScreenBackground'
 import ContactForm from '../ui/ContactForm'
 import MainContainer from '../ui/MainContainer'
 import HeadingSimple from '../ui/HeadingSimple'
+import ExternalLink from '../ui/ExternalLink'
 
 const AboutImg = styled.div`
   width: 100%;
@@ -53,7 +54,9 @@ function About() {
           <br />
           <br />
           <br />
-          Feel free to drop me a line using the contact form below, or connect with me on LinkedIn!
+          Drop me a line using the contact form below, send me an{' '}
+          <ExternalLink href='mailto:joe.peart.dev@gmail.com'>email</ExternalLink> or connect with
+          me on LinkedIn!
         </AboutText>
         <ContactForm size='large' />
       </MainContainer>

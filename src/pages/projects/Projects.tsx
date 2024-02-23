@@ -23,7 +23,7 @@ const projects: ProjectData[] = [
     tags: ['web', 'ai recommendation', 'python'],
     description:
       "GetRec'd is a board game recommendation engine based on data scraped from BoardGameGeek, which is kind of like a wiki for board games. They have a comprehensive collection of first-party data and community-based metrics around games in the database, which made it a great source for feature engineering. After a collecting data and cleaning it, a K-Nearest Neighbors model is used to identify similar games based on distance in the vector space.",
-    liveLink: 'https://google.com',
+    // liveLink: 'https://google.com',
     sourceLink: 'https://github.com/j-prt/GetRecd',
     imgs: ['public/gr5.jpg', 'public/gr3.jpg', 'public/gr4.jpg'],
   },

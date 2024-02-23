@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import ContactForm from '../../ui/ContactForm'
 import { device } from '../../styles/media'
+import React, { forwardRef } from 'react'
+import ExternalLink from '../../ui/ExternalLink'
+import FlexColumn from '../../ui/FlexColumn'
+
+interface ContactMiniProps {
+  refProp: React.RefObject<HTMLElement>
+}
 
 const StyledContactMini = styled.section`
   height: 70rem;
@@ -12,19 +19,13 @@ const StyledContactMini = styled.section`
   );
 `
 
-const ContactContainer = styled.div`
+const ContactContainer = styled(FlexColumn)`
   max-width: var(--home-max-width);
   margin: 0 auto;
   gap: 1.5rem;
-
-  display: flex;
   justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
   padding: 12rem 1rem 2rem;
-
   gap: 5rem;
-
   color: var(--color-accent);
 
   @media ${device.xs} {
@@ -60,24 +61,22 @@ const ContactAbout = styled.p`
   letter-spacing: 0.8px;
 `
 
-function ContactMini() {
+const ContactMini = forwardRef(function ContactMini({ refProp }: ContactMiniProps) {
   return (
-    <StyledContactMini>
+    <StyledContactMini ref={refProp} id='contact'>
       <ContactContainer>
         <ContactInfoBox>
           <ContactHeader>Contact</ContactHeader>
           <ContactAbout>
             Want to get in touch? Use the form and I&apos;ll get back to you at the email you
             provide. Alternatively, you can email me&nbsp;
-            <a style={{ color: '#69aae6' }} href='mailto:joe.peart.dev@gmail.com'>
-              directly.
-            </a>
+            <ExternalLink href='mailto:joe.peart.dev@gmail.co'>directly.</ExternalLink>
           </ContactAbout>
         </ContactInfoBox>
         <ContactForm />
       </ContactContainer>
     </StyledContactMini>
   )
-}
+})
 
 export default ContactMini

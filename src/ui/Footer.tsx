@@ -43,7 +43,6 @@ function Footer() {
     <StyledFooter>
       <Copyright>
         <FooterText>&copy; Joseph Peart {new Date().getFullYear()}</FooterText>
-        {/* <FooterText>{new Date().getFullYear()}</FooterText> */}
       </Copyright>
       <ExternalMedia>
         <IconButton portal='github' />

@@ -4,14 +4,18 @@ import ButtonBox from '../../ui/ButtonBox'
 import FullScreenBackground from '../../ui/FullScreenBackground'
 import SubTitle from '../../ui/SubTitle'
 import { device } from '../../styles/media'
+import { Link } from 'react-router-dom'
+import React from 'react'
+import FlexColumn from '../../ui/FlexColumn'
 
-const HeroBox = styled.div`
+interface HeroProps {
+  contactRef: React.RefObject<HTMLElement>
+}
+
+const HeroBox = styled(FlexColumn)`
   max-width: var(--home-max-width);
   margin: auto;
   padding: 6rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 3rem;
 
   @media ${device.md} {
@@ -39,10 +43,9 @@ const Img = styled.div`
   background-size: cover;
   background-position: center;
   box-shadow: -1rem 1rem 0rem var(--color-accent);
-
+  transform: translate(0.5rem, -1.5rem);
   width: 18rem;
   height: 13rem;
-  transform: translate(0.5rem, -1.5rem);
 
   @media ${device.xs} {
     width: 20rem;
@@ -63,12 +66,9 @@ const Img = styled.div`
     height: 18rem;
   }
 `
-const About = styled.div`
+const About = styled(FlexColumn)`
   margin: auto;
-  display: flex;
-  flex-direction: column;
   flex: 1 1 0;
-  align-items: center;
   gap: 0.5rem;
 
   @media ${device.lg} {
@@ -129,7 +129,10 @@ const AboutText = styled.p`
   }
 `
 
-function Hero() {
+function Hero({ contactRef }: HeroProps) {
+  function scrollToContact() {
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <FullScreenBackground>
       <HeroBox>
@@ -153,12 +156,12 @@ function Hero() {
             want to chat, you can use the contact form below or connect with me on LinkedIn. ✌︎
           </AboutText>
           <ButtonBox>
-            <Button onPress={() => {}} $styleType='primary'>
+            <Button onPress={scrollToContact} $styleType='primary'>
               Contact
             </Button>
-            <Button onPress={() => {}} $styleType='secondary'>
-              Learn More
-            </Button>
+            <Link to='/about'>
+              <Button $styleType='secondary'>Learn More</Button>
+            </Link>
           </ButtonBox>
         </About>
       </HeroBox>

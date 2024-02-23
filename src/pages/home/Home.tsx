@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import ContactMini from './ContactMini'
 import Featured from './Featured'
 import Hero from './Hero'
@@ -6,11 +7,12 @@ import Hero from './Hero'
 // and look at tweaking the Y padding (gap, marg bottoms) within elements
 
 function Home() {
+  const contactRef = useRef(null)
   return (
     <div>
-      <Hero />
+      <Hero contactRef={contactRef} />
       <Featured />
-      <ContactMini />
+      <ContactMini refProp={contactRef} />
     </div>
   )
 }
