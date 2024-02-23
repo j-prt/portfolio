@@ -156,7 +156,10 @@ function Hero({ contactRef }: HeroProps) {
             <br />
             If you&apos;re interested in working together, curious about what I do, or even just
             want to chat, you can use the contact form below or connect with me on{' '}
-            <ExternalLink href={URLS.linkedin}>LinkedIn</ExternalLink>. ✌︎
+            <ExternalLink href={URLS.linkedin} target='_blank' rel='noreferrer'>
+              LinkedIn
+            </ExternalLink>
+            . ✌︎
           </AboutText>
           <ButtonBox>
             <Button onPress={scrollToContact} $styleType='primary'>

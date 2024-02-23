@@ -6,6 +6,7 @@ import CopyBox from '../../ui/CopyBox'
 import FunHeading from '../../ui/FunHeading'
 import TextQuote from '../../ui/TextQuote'
 import SubTitle from '../../ui/SubTitle'
+import { Link } from 'react-router-dom'
 
 function BlogMini() {
   return (
@@ -20,12 +21,10 @@ function BlogMini() {
           nulla, ex officiis. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
         </TextQuote>
         <ButtonBox>
-          <Button onPress={() => {}} $styleType='primary'>
-            Read On
-          </Button>
-          <Button onPress={() => {}} $styleType='secondary'>
-            All Posts
-          </Button>
+          <Button $styleType='primary'>Read On</Button>
+          <Link to='/blog'>
+            <Button $styleType='secondary'>All Posts</Button>
+          </Link>
         </ButtonBox>
       </CopyBox>
     </FeaturedContainer>

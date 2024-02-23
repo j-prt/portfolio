@@ -8,10 +8,19 @@ import Blog from './pages/blog/Blog'
 import About from './pages/About'
 import BlogDetail from './pages/blog/BlogDetail'
 import ScrollToTop from './utils/ScrollToTop'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+    },
+  },
+})
 
 function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <GlobalStyles />
       <BrowserRouter>
         <ScrollToTop />
@@ -25,7 +34,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </QueryClientProvider>
   )
 }
 
