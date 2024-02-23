@@ -7,15 +7,6 @@ interface FunHeadingProps {
   width?: 'shared' | 'solo'
 }
 
-// const sides = {
-//   right: css`
-//     transform: translateY(5px) skew(-8deg, -1.5deg) scale(1.15);
-//   `,
-//   left: css`
-//     transform: translateY(5px) skew(-8deg, -1.5deg) scale(1.15);
-//   `,
-// }
-
 const widths = {
   shared: css`
     @media ${device.xs} {
@@ -69,7 +60,7 @@ const FunHeading = styled.h1<FunHeadingProps>`
     background-image: linear-gradient(var(--color-accent), var(--color-accent));
     border-radius: var(--border-radius-sm);
     width: 100%;
-    transform: translateY(5px) skew(-8deg, -1.5deg) scale(1.15);
+    transform: translateY(6px) skew(-8deg, -1.5deg) scale(1.15, 1.2);
   }
 
   ${props => widths[props.width || 'solo']}

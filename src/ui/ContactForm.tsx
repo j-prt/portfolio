@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 import Button from './Button'
 import { device } from '../styles/media'
+import { FieldErrors, FieldValues, useForm } from 'react-hook-form'
+import { MESSAGE_LIMIT } from '../utils/constants'
 
 interface SCFProps {
   size?: 'small' | 'large'
@@ -76,36 +78,80 @@ const TextArea = styled.textarea`
   border-radius: var(--border-radius-xs);
   height: 12rem;
   border: none;
+  resize: none;
 `
 
 function ContactForm({ size }: SCFProps) {
+  const { register, handleSubmit, watch, reset, formState } = useForm()
+  const { errors } = formState
+  const messageText = watch('message', '')
+
+  function onSubmit(data: FieldValues) {
+    reset()
+    console.log(data)
+  }
+  function onError(errors: FieldErrors<FieldValues>) {
+    console.log(errors)
+  }
+  if (errors) console.log(errors)
+
   return (
-    <StyledContactForm size={size}>
+    <StyledContactForm onSubmit={handleSubmit(onSubmit, onError)} size={size}>
       <AdjacentRows>
         <FormRow>
           <Label>First Name</Label>
-          <Input />
+          <Input
+            type='text'
+            id='firstname'
+            disabled={false}
+            {...register('firstname', {
+              required: '!!',
+            })}
+          />
         </FormRow>
         <FormRow>
           <Label>Last Name</Label>
-          <Input />
+          <Input
+            type='text'
+            id='lastname'
+            disabled={false}
+            {...register('lastname', {
+              required: '!!',
+            })}
+          />
         </FormRow>
       </AdjacentRows>
       <FormRow>
         <Label>Email</Label>
-        <Input />
+        <Input
+          type='email'
+          id='email'
+          disabled={false}
+          {...register('email', {
+            required: '!!',
+          })}
+        />
       </FormRow>
       <FormRow>
-        <Label>What&apos;s up?</Label>
-        <TextArea />
+        <Label>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <span>What&apos;s up?</span>
+            <span>
+              {messageText.length} / {MESSAGE_LIMIT}
+            </span>
+          </div>
+        </Label>
+        <TextArea
+          id='message'
+          defaultValue=''
+          disabled={false}
+          {...register('message', {
+            required: '!!',
+            validate: (value: string) => value.length <= MESSAGE_LIMIT,
+          })}
+        />
       </FormRow>
-      <Button
-        onPress={e => {
-          e.preventDefault()
-        }}
-        $size='large'
-        $hoverEffect='simple'
-      >
+      <Button $size='large' $hoverEffect='simple'>
         Submit
       </Button>
     </StyledContactForm>

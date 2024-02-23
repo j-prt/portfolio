@@ -26,25 +26,3 @@ export function useBlogById(id: number) {
 
   return { isLoading, blog }
 }
-
-// export function useBlogById(id: number) {
-//     const queryClient = useQueryClient()
-//     const allBlogs: BlogData[] | undefined = queryClient.getQueryData(['blogs'])
-//     const blog = allBlogs?.find(blog => blog.id === id)
-//     if (blog) return blog
-
-//     return getOneBlog(id)
-//   }
-
-// function useGetOneBlog() {
-//     const {
-//       isLoading,
-//       data: blog,
-//       error,
-//     } = useQuery({
-//       queryKey: ['blogs'],
-//       queryFn: () => getOneBlog(id),
-//     })
-
-//     return { isLoading, error, blog }
-// }
