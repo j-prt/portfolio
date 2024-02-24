@@ -35,7 +35,7 @@ export async function getOneBlog(id: number): Promise<BlogData> {
 }
 
 export async function postMessage(data: FieldValues): Promise<boolean> {
-  const { error } = await supabase.from('portfolio_message').insert([data])
+  const { error } = await supabase.from('portfolio_messages').insert([data])
   console.log('inside send message')
 
   if (error) {

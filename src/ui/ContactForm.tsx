@@ -37,6 +37,7 @@ const sizes = {
 
 const StyledContactForm = styled.form<SCFProps>`
   ${props => sizes[props.size || 'small']}
+  position: relative;
   padding: 1.5rem;
   border: 1px solid var(--color-accent);
   box-shadow: 0rem 0rem 0.4rem 0rem var(--color-accent);
@@ -105,18 +106,35 @@ const TextArea = styled.textarea`
   resize: none;
 `
 
-const FormReplacement = styled.div`
+interface FormReplacementProps {
+  $visible: boolean | null
+}
+
+const FormReplacement = styled.div<FormReplacementProps>`
   position: absolute;
-  margin: auto;
+  top: 2%;
+  left: 2%;
+  background-color: rgba(19, 124, 112, 0.9);
+  border-radius: var(--border-radius-sm);
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   color: var(--color-accent);
-  height: 50%;
-  width: 50%;
+  height: 96%;
+  width: 96%;
+  transition: all 0.5s;
 
-  /* background-color: rgba(19, 124, 112, 0.9); */
+  ${props =>
+    props.$visible
+      ? css`
+          visibility: visible;
+          opacity: 1;
+        `
+      : css`
+          opacity: 0;
+          visibility: hidden;
+        `}
 `
 
 const FormXOut = styled.div`
@@ -124,22 +142,23 @@ const FormXOut = styled.div`
   font-size: 2rem;
   right: 5%;
   top: 5%;
-  color: var(--color-accent-dark);
+  color: var(--color-accent);
   cursor: pointer;
 `
 
 function ContactForm({ size }: SCFProps) {
   const { register, handleSubmit, watch, formState } = useForm<FormTypes>()
   const { sendMessage, isSending } = useSendMessage()
-  const [formSuccess, setFormSuccess] = useState<boolean | null>(null)
+  const [formSuccess, setFormSuccess] = useState<boolean | undefined>()
   const { errors } = formState
+
   const messageText = watch('message', '')
+  const disabledInput = isSending || formSuccess || formSuccess == false
 
   function onSubmit(data: FieldValues) {
     console.log('pre sendmessage')
     sendMessage(data)
       .then(() => {
-        console.log('success')
         setFormSuccess(true)
       })
       .catch(() => setFormSuccess(false))
@@ -148,30 +167,31 @@ function ContactForm({ size }: SCFProps) {
     console.log(errors)
   }
 
-  if (formSuccess === true) {
-    return <StyledContactForm size={size}>Your </StyledContactForm>
-  }
-  if (formSuccess === false) {
-    return (
-      <StyledContactForm size={size}>
-        <FormReplacement>
-          <FormXOut
-            onClick={() => {
-              setFormSuccess(null)
-            }}
-          >
-            <IoClose />
-          </FormXOut>
-          Something went wrong!
-          <br />
-          Maybe try again?
-        </FormReplacement>
-      </StyledContactForm>
-    )
-  }
-
   return (
     <StyledContactForm onSubmit={handleSubmit(onSubmit, onError)} size={size}>
+      <FormReplacement $visible={formSuccess || formSuccess === false}>
+        {!formSuccess ? (
+          <>
+            <FormXOut
+              tabIndex={0}
+              onClick={() => {
+                setFormSuccess(undefined)
+              }}
+            >
+              <IoClose />
+            </FormXOut>
+            <p>
+              Something went wrong!
+              <br />
+              Maybe try again?
+            </p>
+          </>
+        ) : (
+          <p>
+            Your message has been sent! <br /> I&apos;ll get back to you as soon as possible.
+          </p>
+        )}
+      </FormReplacement>
       <AdjacentRows>
         <FormRow>
           <Label $error={errors?.firstname}>
@@ -180,7 +200,7 @@ function ContactForm({ size }: SCFProps) {
           <Input
             type='text'
             id='firstname'
-            disabled={false}
+            disabled={disabledInput}
             {...register('firstname', {
               required: '!!',
             })}
@@ -193,7 +213,7 @@ function ContactForm({ size }: SCFProps) {
           <Input
             type='text'
             id='lastname'
-            disabled={false}
+            disabled={disabledInput}
             {...register('lastname', {
               required: '!!',
             })}
@@ -205,7 +225,7 @@ function ContactForm({ size }: SCFProps) {
         <Input
           // type='email'
           id='email'
-          disabled={false}
+          disabled={disabledInput}
           {...register('email', {
             required: '!!',
             pattern: {
@@ -228,14 +248,14 @@ function ContactForm({ size }: SCFProps) {
         <TextArea
           id='message'
           defaultValue=''
-          disabled={isSending}
+          disabled={disabledInput}
           {...register('message', {
             required: '!!',
             validate: (value: string) => value.length <= MESSAGE_LIMIT,
           })}
         />
       </FormRow>
-      <Button disabled={isSending} $size='large' $hoverEffect='simple'>
+      <Button disabled={disabledInput} $size='large' $hoverEffect='simple'>
         Submit
       </Button>
     </StyledContactForm>
