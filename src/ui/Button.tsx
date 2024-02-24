@@ -5,6 +5,7 @@ interface StyleProps {
   $styleType?: 'primary' | 'secondary'
   $hoverEffect?: 'glow' | 'simple'
   $size?: 'medium' | 'large'
+  disabled?: boolean
 }
 
 interface ButtonProps extends StyleProps {
@@ -56,17 +57,23 @@ const StyledButton = styled.button<StyleProps>`
   ${props => sizes[props.$size || 'medium']};
   ${props => variations[props.$styleType || 'primary']};
   &:hover {
-    ${props => hoverEffect[props.$hoverEffect || 'glow']};
+    ${props => (props.disabled ? '' : hoverEffect[props.$hoverEffect || 'glow'])};
+  }
+
+  &:disabled {
+    background-color: var(--color-accent-dark);
+    cursor: not-allowed;
   }
 `
 
-function Button({ children, onPress, $styleType, $hoverEffect, $size }: ButtonProps) {
+function Button({ children, onPress, $styleType, $hoverEffect, $size, disabled }: ButtonProps) {
   return (
     <StyledButton
       onClick={onPress}
       $styleType={$styleType}
       $hoverEffect={$hoverEffect}
       $size={$size}
+      disabled={disabled}
     >
       {children}
     </StyledButton>

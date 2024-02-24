@@ -4,6 +4,7 @@ import { device } from '../styles/media'
 import { FieldError, FieldErrors, FieldValues, useForm } from 'react-hook-form'
 import { MESSAGE_LIMIT } from '../utils/constants'
 import { IoAlertCircleOutline } from 'react-icons/io5'
+import { useSendMessage } from '../hooks/useSendMessage'
 
 interface SCFProps {
   size?: 'small' | 'large'
@@ -92,7 +93,6 @@ const Input = styled.input`
   height: 1.8rem;
   border: none;
   width: 100%;
-  /* display: inline; */
 `
 
 const TextArea = styled.textarea`
@@ -105,12 +105,14 @@ const TextArea = styled.textarea`
 
 function ContactForm({ size }: SCFProps) {
   const { register, handleSubmit, watch, reset, formState } = useForm<FormTypes>()
+  const { sendMessage, isSending } = useSendMessage()
   const { errors } = formState
   const messageText = watch('message', '')
 
   function onSubmit(data: FieldValues) {
     reset()
     console.log(data)
+    sendMessage(data)
   }
   function onError(errors: FieldErrors<FieldValues>) {
     console.log(errors)
@@ -175,14 +177,14 @@ function ContactForm({ size }: SCFProps) {
         <TextArea
           id='message'
           defaultValue=''
-          disabled={false}
+          disabled={isSending}
           {...register('message', {
             required: '!!',
             validate: (value: string) => value.length <= MESSAGE_LIMIT,
           })}
         />
       </FormRow>
-      <Button $size='large' $hoverEffect='simple'>
+      <Button disabled={isSending} $size='large' $hoverEffect='simple'>
         Submit
       </Button>
     </StyledContactForm>

@@ -6,7 +6,7 @@ import Paragraph from '../../ui/Paragraph'
 import styled from 'styled-components'
 import { IoMdArrowBack } from 'react-icons/io'
 import { Link, useParams } from 'react-router-dom'
-import { useBlogById } from './useBlogById'
+import { useBlogById } from '../../hooks/useBlogById'
 
 const Back = styled.div`
   width: 100%;

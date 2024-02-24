@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import { BlogData } from '../types'
+import { FieldValues } from 'react-hook-form'
 
 const supabaseUrl = 'https://iictbhonfyzdaiiucfwf.supabase.co'
 // Anonymous public key - no write access
@@ -31,4 +32,15 @@ export async function getOneBlog(id: number): Promise<BlogData> {
   }
 
   return blogposts[0]
+}
+
+export async function postMessage(data: FieldValues): Promise<boolean> {
+  const { error } = await supabase.from('portfolio_messages').insert([data])
+
+  if (error) {
+    console.log(error)
+    throw new Error("Couldn't post message")
+  }
+
+  return true
 }

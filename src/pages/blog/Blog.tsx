@@ -5,7 +5,7 @@ import Rule from '../../ui/Rule'
 import SubTitle from '../../ui/SubTitle'
 import BlogCard from './BlogCard'
 import ListContainer from '../../ui/ListContainer'
-import { useBlogs } from './useBlogs'
+import { useBlogs } from '../../hooks/useBlogs'
 import Loader from '../../ui/Loader'
 
 // const blogs: BlogData[] = [

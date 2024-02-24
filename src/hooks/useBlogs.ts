@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getBlogs } from '../../utils/supabase'
+import { getBlogs } from '../utils/supabase'
 
 export function useBlogs() {
   const {

@@ -1,6 +1,6 @@
 import { useQueryClient } from '@tanstack/react-query'
-import { BlogData } from '../../types'
-import { getOneBlog } from '../../utils/supabase'
+import { BlogData } from '../types'
+import { getOneBlog } from '../utils/supabase'
 import { useEffect, useState } from 'react'
 
 export function useBlogById(id: number) {
