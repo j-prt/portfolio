@@ -5,9 +5,9 @@ import { FieldValues } from 'react-hook-form'
 export function useSendMessage() {
   const [isSending, setIsSending] = useState<boolean>(false)
 
-  function sendMessage(data: FieldValues) {
+  async function sendMessage(data: FieldValues) {
     setIsSending(true)
-    postMessage(data)
+    return postMessage(data)
       .then(() => setIsSending(false))
       .catch(err => {
         setIsSending(false)

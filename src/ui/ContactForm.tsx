@@ -3,8 +3,9 @@ import Button from './Button'
 import { device } from '../styles/media'
 import { FieldError, FieldErrors, FieldValues, useForm } from 'react-hook-form'
 import { MESSAGE_LIMIT } from '../utils/constants'
-import { IoAlertCircleOutline } from 'react-icons/io5'
+import { IoAlertCircleOutline, IoClose } from 'react-icons/io5'
 import { useSendMessage } from '../hooks/useSendMessage'
+import { useState } from 'react'
 
 interface SCFProps {
   size?: 'small' | 'large'
@@ -80,7 +81,8 @@ const Label = styled.label<LabelProps>`
     props.$error &&
     css`
       & + input,
-      & + textarea {
+      & + textarea,
+      &:active {
         outline: 2px solid red;
         outline-offset: 2px;
       }
@@ -103,21 +105,70 @@ const TextArea = styled.textarea`
   resize: none;
 `
 
+const FormReplacement = styled.div`
+  position: absolute;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  height: 50%;
+  width: 50%;
+
+  /* background-color: rgba(19, 124, 112, 0.9); */
+`
+
+const FormXOut = styled.div`
+  position: absolute;
+  font-size: 2rem;
+  right: 5%;
+  top: 5%;
+  color: var(--color-accent-dark);
+  cursor: pointer;
+`
+
 function ContactForm({ size }: SCFProps) {
-  const { register, handleSubmit, watch, reset, formState } = useForm<FormTypes>()
+  const { register, handleSubmit, watch, formState } = useForm<FormTypes>()
   const { sendMessage, isSending } = useSendMessage()
+  const [formSuccess, setFormSuccess] = useState<boolean | null>(null)
   const { errors } = formState
   const messageText = watch('message', '')
 
   function onSubmit(data: FieldValues) {
-    reset()
-    console.log(data)
+    console.log('pre sendmessage')
     sendMessage(data)
+      .then(() => {
+        console.log('success')
+        setFormSuccess(true)
+      })
+      .catch(() => setFormSuccess(false))
   }
   function onError(errors: FieldErrors<FieldValues>) {
     console.log(errors)
   }
-  if (errors) console.log(errors?.firstname?.message)
+
+  if (formSuccess === true) {
+    return <StyledContactForm size={size}>Your </StyledContactForm>
+  }
+  if (formSuccess === false) {
+    return (
+      <StyledContactForm size={size}>
+        <FormReplacement>
+          <FormXOut
+            onClick={() => {
+              setFormSuccess(null)
+            }}
+          >
+            <IoClose />
+          </FormXOut>
+          Something went wrong!
+          <br />
+          Maybe try again?
+        </FormReplacement>
+      </StyledContactForm>
+    )
+  }
 
   return (
     <StyledContactForm onSubmit={handleSubmit(onSubmit, onError)} size={size}>
@@ -152,7 +203,7 @@ function ContactForm({ size }: SCFProps) {
       <FormRow>
         <Label $error={errors?.email}>Email&nbsp;{errors?.email && <IoAlertCircleOutline />}</Label>
         <Input
-          type='email'
+          // type='email'
           id='email'
           disabled={false}
           {...register('email', {
