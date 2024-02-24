@@ -144,6 +144,12 @@ const FormXOut = styled.div`
   top: 5%;
   color: var(--color-accent);
   cursor: pointer;
+  line-height: 0;
+
+  &:focus {
+    outline: 2px solid var(--color-accent);
+    border-radius: var(--border-radius-sm);
+  }
 `
 
 function ContactForm({ size }: SCFProps) {
@@ -177,6 +183,7 @@ function ContactForm({ size }: SCFProps) {
               onClick={() => {
                 setFormSuccess(undefined)
               }}
+              onKeyDown={e => e.key === 'Enter' && setFormSuccess(undefined)}
             >
               <IoClose />
             </FormXOut>
