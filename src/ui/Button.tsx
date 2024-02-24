@@ -17,6 +17,7 @@ const variations = {
   primary: css`
     background-color: var(--color-accent);
     color: var(--color-accent-darkest);
+    border: 1px solid transparent;
   `,
   secondary: css`
     background-color: transparent;
