@@ -12,9 +12,7 @@ const AboutImg = styled.div`
   aspect-ratio: 32/20;
   border-radius: var(--border-radius-md);
   background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
-    url('./public/about999.jpg');
-  /* background-image: linear-gradient(rgba(30, 81, 40, 0.55), rgba(30, 81, 40, 0.55)),
-    url('./public/profile1.jpg'); */
+    url('/about999.jpg');
   background-size: cover;
   background-position: center;
   box-shadow: 1rem 1rem 0rem var(--color-accent);

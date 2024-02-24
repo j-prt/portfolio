@@ -62,7 +62,7 @@ const ContactMini = forwardRef(function ContactMini(
   ref: React.ForwardedRef<HTMLElement>
 ) {
   return (
-    <StyledContactMini ref={ref} id='contact'>
+    <StyledContactMini ref={ref}>
       <ContactContainer>
         <ContactInfoBox>
           <ContactHeader>Contact</ContactHeader>

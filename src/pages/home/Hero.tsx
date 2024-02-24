@@ -41,7 +41,7 @@ const Img = styled.div`
   grid-column: 1/3;
   border-radius: var(--border-radius-md);
   background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
-    url('./public/profile1.jpg');
+    url('/profile1.jpg');
   background-size: cover;
   background-position: center;
   box-shadow: -1rem 1rem 0rem var(--color-accent);

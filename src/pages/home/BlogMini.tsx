@@ -11,17 +11,19 @@ import { Link } from 'react-router-dom'
 function BlogMini() {
   return (
     <FeaturedContainer>
-      <FeaturedImg $side='left' $brightness='dark' $imgUrl='./public/notebook.jpg' />
+      <FeaturedImg $side='left' $brightness='dark' $imgUrl='/notebook.jpg' />
       <CopyBox>
         <FunHeading width='shared'>Featured Blog</FunHeading>
-        <SubTitle>Title of blogpost featured</SubTitle>
+        <SubTitle>Metablog: Making This Site</SubTitle>
         <TextQuote $colorPalette='blue'>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem exercitationem quod harum
-          dolores nostrum sapiente quis asperiores aliquam non qui? Dolorum ipsum maxime facilis
-          nulla, ex officiis. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          It feels like making a personal website is something that was on my to-do list forever.
+          Since before I learned to code, even. Having ‘my own space’ on the internet appealed to me
+          back in my teen years, on some site whose name we’ve probably all forgotten.
         </TextQuote>
         <ButtonBox>
-          <Button $styleType='primary'>Read On</Button>
+          <Link to='/blog/4'>
+            <Button $styleType='primary'>Read On</Button>
+          </Link>
           <Link to='/blog'>
             <Button $styleType='secondary'>All Posts</Button>
           </Link>
