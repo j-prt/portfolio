@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { ProjectData } from '../../types'
 import FullScreenBackground from '../../ui/FullScreenBackground'
 import FunHeading from '../../ui/FunHeading'
@@ -30,6 +31,14 @@ const projects: ProjectData[] = [
 ]
 
 function Projects() {
+  // Eagerly load carousel images after component mounts
+  useEffect(() => {
+    const eagerUrls = ['cronicle2.webp', 'cronicle3.webp', 'gr3.webp', 'gr4.webp']
+    eagerUrls.forEach(url => {
+      const img = new Image()
+      img.src = url
+    })
+  }, [])
   return (
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
