@@ -230,7 +230,6 @@ function ContactForm({ size }: SCFProps) {
       <FormRow>
         <Label $error={errors?.email}>Email&nbsp;{errors?.email && <IoAlertCircleOutline />}</Label>
         <Input
-          // type='email'
           id='email'
           disabled={disabledInput}
           {...register('email', {

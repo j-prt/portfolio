@@ -3,15 +3,13 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyles = createGlobalStyle`
 
 :root {
---color-black: #191A19;
-
 --color-main-white: #e9eeea;
 --color-main-lightest: #d2dcd4;
 --color-main: #1E5128;
 --color-main-med: #123118;
---color-main-med-rgb: rgb(18, 49, 24);
+--color-main-med-rgb: 18, 49, 24;
 --color-main-dark: #09180c;
---color-main-dark-rgb: rgb(9, 24, 12);
+--color-main-dark-rgb: 9, 24, 12;
 
 --color-secondary: #281E51;
 --color-secondary-rgb: 40, 30, 81;

@@ -23,18 +23,6 @@ const Content = styled.div`
   flex-direction: column;
   gap: 2rem;
 `
-// const blog: BlogData = {
-//   date: new Date('2024/02/13'),
-//   title: 'Initial Commit',
-//   intro: '', // used in the /blog route
-//   body: `Great title for an inaugural blogpost, right?
-//   I like the idea of blogging, but I haven't decided on a structure or a framework. I have a loose set of goals, but no project requirements. Mainly, I wanted to practise designing pages and layouts — that's what got me to make this site. I expect most posts will be fairly short impressions on media or reflections on something I learned recently.
-//   Thanks for dropping by.`,
-//   id: 2342,
-// }
-
-// TODO
-// URL slugs
 
 function BlogDetail() {
   const { id } = useParams()
