@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 function BlogMini() {
   return (
     <FeaturedContainer>
-      <FeaturedImg $side='left' $brightness='dark' $imgUrl='/notebook.jpg' />
+      <FeaturedImg $side='left' $brightness='dark' $imgUrl='/notebook.webp' />
       <CopyBox>
         <FunHeading width='shared'>Featured Blog</FunHeading>
         <SubTitle>Metablog: Making This Site</SubTitle>

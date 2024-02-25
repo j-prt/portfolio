@@ -12,7 +12,7 @@ const AboutImg = styled.div`
   aspect-ratio: 32/20;
   border-radius: var(--border-radius-md);
   background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
-    url('/about999.jpg');
+    url('/about999.webp');
   background-size: cover;
   background-position: center;
   box-shadow: 1rem 1rem 0rem var(--color-accent);
@@ -55,7 +55,11 @@ function About() {
           <br />
           Drop me a line using the contact form below, send me an{' '}
           <ExternalLink href='mailto:joe.peart.dev@gmail.com'>email</ExternalLink> or connect with
-          me on <ExternalLink href={URLS.linkedin}>LinkedIn</ExternalLink>!
+          me on{' '}
+          <ExternalLink href={URLS.linkedin} target='_blank' rel='noreferrer'>
+            LinkedIn
+          </ExternalLink>
+          !
         </AboutText>
         <ContactForm size='large' />
       </MainContainer>
