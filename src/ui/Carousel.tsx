@@ -19,7 +19,7 @@ const StyledCarousel = styled.div`
   position: relative;
   width: 100%;
   max-width: 35rem;
-  aspect-ratio: 35/24;
+  aspect-ratio: 1.5;
   padding: 1rem 1rem;
 
   border: 0.5px solid var(--color-accent);
@@ -37,6 +37,12 @@ const StyledCarousel = styled.div`
     max-width: 45rem;
     width: 45rem;
     height: 30rem;
+  }
+
+  _::-webkit-full-page-media,
+  _:future,
+  :root & {
+    aspect-ratio: 1.7;
   }
 `
 

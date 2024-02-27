@@ -54,6 +54,7 @@ body {
   font-family: 'Chakra Petch', sans-serif;
   font-weight: 300;
   overscroll-behavior: none;
+  background-color: var(--color-accent);
 }
 
 button {
