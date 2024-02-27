@@ -7,6 +7,8 @@ const StyledHeader = styled.header`
   width: 100%;
   background-color: transparent;
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
   color: var(--color-accent);
   z-index: 999;
 `
