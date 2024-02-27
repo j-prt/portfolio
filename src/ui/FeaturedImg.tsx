@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components'
 import { device } from '../styles/media'
+import FadeInElement from './FadeInElement'
 
 interface SFIProps {
   $side: 'right' | 'left'
   $brightness: 'medium' | 'dark'
-  $imgUrl: string
+  src: string
 }
 
 const sides = {
@@ -22,11 +23,11 @@ const levels = {
   medium: 'rgba(40, 30, 81, 0.45), rgba(40, 30, 81, 0.45)',
 }
 
-const FeaturedImg = styled.div<SFIProps>`
+const FeaturedImg = styled(FadeInElement)<SFIProps>`
   height: 26rem;
   width: 18rem;
   background-image: linear-gradient(${props => levels[props.$brightness]}),
-    url(${props => props.$imgUrl});
+    url(${props => props.src});
   background-size: cover;
   background-position: center;
   border-radius: var(--border-radius-sm);

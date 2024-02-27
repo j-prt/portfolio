@@ -17,6 +17,7 @@ export const GlobalStyles = createGlobalStyle`
 --color-secondary-med-rgb: 28, 21, 57;
 
 --color-accent: #D8E9A8;
+--color-accent-rgb: 216, 233, 168;
 --color-accent-light: #e4f0c2;
 --color-accent-lighter: #e8f2cb;
 --color-accent-dark: #97a376;

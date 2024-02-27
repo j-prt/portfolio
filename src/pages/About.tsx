@@ -5,17 +5,21 @@ import MainContainer from '../ui/MainContainer'
 import HeadingSimple from '../ui/HeadingSimple'
 import ExternalLink from '../ui/ExternalLink'
 import { URLS } from '../utils/constants'
+import FadeInElement from '../ui/FadeInElement'
 
-const AboutImg = styled.div`
+const AboutImg = styled(FadeInElement)`
   width: 100%;
   max-width: 32rem;
   aspect-ratio: 32/20;
   border-radius: var(--border-radius-md);
-  background-image: linear-gradient(rgba(9, 24, 12, 0.35), rgba(9, 24, 12, 0.35)),
+  background-image: linear-gradient(
+      rgba(var(--color-main-dark-rgb), 0.35),
+      rgba(var(--color-main-dark-rgb), 0.35)
+    ),
     url('/about999.webp');
+  box-shadow: 1rem 1rem 0rem var(--color-accent);
   background-size: cover;
   background-position: center;
-  box-shadow: 1rem 1rem 0rem var(--color-accent);
   transform: translateX(-0.5rem);
 `
 
@@ -31,7 +35,7 @@ function About() {
     <FullScreenBackground size='long'>
       <MainContainer>
         <AboutTitle>About</AboutTitle>
-        <AboutImg />
+        <AboutImg src='about999.webp' />
         <AboutText>
           Hey again! Joseph here. I&apos;m a software developer specializing in machine learning and
           data science. Western Canada born and raised; currently living in Westbank, BC.

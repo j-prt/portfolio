@@ -9,6 +9,7 @@ import React from 'react'
 import FlexColumn from '../../ui/FlexColumn'
 import ExternalLink from '../../ui/ExternalLink'
 import { URLS } from '../../utils/constants'
+import FadeInElement from '../../ui/FadeInElement'
 
 interface HeroProps {
   contactRef: React.RefObject<HTMLElement>
@@ -26,7 +27,7 @@ const HeroBox = styled(FlexColumn)`
   }
 `
 
-const BrandBox = styled.div`
+const BrandBox = styled(FadeInElement)`
   display: grid;
   margin: auto;
   grid-template-columns: 1fr 2fr;
@@ -138,7 +139,7 @@ function Hero({ contactRef }: HeroProps) {
   return (
     <FullScreenBackground>
       <HeroBox>
-        <BrandBox>
+        <BrandBox src='profile1.webp'>
           <H1>Joseph</H1>
           <H1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peart</H1>
           <Img />

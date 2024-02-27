@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import { device } from '../styles/media'
+import FadeInElement from './FadeInElement'
 
 interface ImgProps {
   url: string
@@ -15,7 +16,7 @@ interface CarouselProps {
   imgArray: string[]
 }
 
-const StyledCarousel = styled.div`
+const StyledCarousel = styled(FadeInElement)`
   position: relative;
   width: 100%;
   max-width: 35rem;
@@ -106,7 +107,7 @@ function Carousel({ imgArray }: CarouselProps) {
   }
 
   return (
-    <StyledCarousel>
+    <StyledCarousel src={imgArray[0]}>
       <Arrow side='left' onClick={handleClickBack}>
         <IoIosArrowBack />
       </Arrow>

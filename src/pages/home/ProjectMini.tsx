@@ -44,7 +44,7 @@ function ProjectMini() {
           </Link>
         </ButtonBox>
       </CopyBox>
-      <FeaturedImg $side='right' $brightness='medium' $imgUrl='/laptop2.webp' />
+      <FeaturedImg $side='right' $brightness='medium' src='/laptop2.webp' />
     </FeaturedContainer>
   )
 }
