@@ -5,7 +5,7 @@ import DateLine from '../../ui/DateLine'
 import Paragraph from '../../ui/Paragraph'
 import styled from 'styled-components'
 import { IoMdArrowBack } from 'react-icons/io'
-import { Link, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { useBlogById } from '../../hooks/useBlogById'
 
 const Back = styled.div`
@@ -16,6 +16,7 @@ const Back = styled.div`
   top: 8rem;
 
   font-size: 2rem;
+  cursor: pointer;
 `
 
 const Content = styled.div`
@@ -24,17 +25,22 @@ const Content = styled.div`
   gap: 2rem;
 `
 
+const SectionHeader = styled.p`
+  font-size: 1.5rem;
+  font-weight: 500;
+`
+
 function BlogDetail() {
+  const location = useLocation()
   const { id } = useParams()
   const { isLoading, blog } = useBlogById(Number(id))
+  const navigate = useNavigate()
 
   return (
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
-        <Back>
-          <Link to='/blog'>
-            <IoMdArrowBack />
-          </Link>
+        <Back onClick={() => (location.key !== 'default' ? navigate(-1) : navigate('/blog'))}>
+          <IoMdArrowBack />
         </Back>
         {isLoading || !blog ? (
           <div></div>
@@ -51,9 +57,15 @@ function BlogDetail() {
             </DateLine>
             <HeadingSimple>{blog.title}</HeadingSimple>
             <Content>
-              {blog.body.split('\n').map((p, i) => (
-                <Paragraph key={i}>{p}</Paragraph>
-              ))}
+              {blog.body
+                .split('\n')
+                .map((p, i) =>
+                  p.startsWith('##') ? (
+                    <SectionHeader key={i}>{p.slice(2)}</SectionHeader>
+                  ) : (
+                    <Paragraph key={i}>{p}</Paragraph>
+                  )
+                )}
             </Content>
           </>
         )}
