@@ -43,12 +43,12 @@ function BlogDetail() {
         <Back onClick={() => (location.key !== 'default' ? navigate(-1) : navigate('/blog'))}>
           <IoMdArrowBack />
         </Back>
-        {isLoading || !blog ? (
+        {isLoading ? (
           <div></div>
-        ) : (
+        ) : blog ? (
           <>
             <DateLine>
-              {new Date(blog.date)
+              {new Date(blog.date.replace(/-/g, '/'))
                 .toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'short',
@@ -69,6 +69,8 @@ function BlogDetail() {
                 )}
             </Content>
           </>
+        ) : (
+          'No blog here. How did you even find this page?'
         )}
       </MainContainer>
     </FullScreenBackground>
