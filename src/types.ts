@@ -1,5 +1,5 @@
 export interface BlogData {
-  date: Date
+  date: string
   title: string
   intro: string
   body: string

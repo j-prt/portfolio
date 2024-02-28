@@ -28,6 +28,7 @@ const Content = styled.div`
 const SectionHeader = styled.p`
   font-size: 1.5rem;
   font-weight: 500;
+  margin-bottom: -0.75rem;
 `
 
 function BlogDetail() {
@@ -58,7 +59,7 @@ function BlogDetail() {
             <HeadingSimple>{blog.title}</HeadingSimple>
             <Content>
               {blog.body
-                .split('\n')
+                .split('\n\n')
                 .map((p, i) =>
                   p.startsWith('##') ? (
                     <SectionHeader key={i}>{p.slice(2)}</SectionHeader>

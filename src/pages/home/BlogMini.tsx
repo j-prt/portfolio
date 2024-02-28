@@ -17,7 +17,7 @@ function BlogMini() {
         <SubTitle>Metablog: Making This Site</SubTitle>
         <TextQuote $colorPalette='blue'>
           It feels like making a personal website is something that was on my to-do list forever.
-          Since before I learned to code, even. Having ‘my own space’ on the internet appealed to me
+          Since long before I learned to code. Having ‘my own space’ on the internet appealed to me
           back in my teen years, on some site whose name we’ve probably all forgotten.
         </TextQuote>
         <ButtonBox>

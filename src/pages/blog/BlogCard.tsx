@@ -55,7 +55,8 @@ const BlogIntro = styled.p`
 `
 
 function BlogCard({ blogData }: BlogCardProps) {
-  const dateStringRaw = new Date(blogData.date)
+  console.log(blogData.date)
+  const dateStringRaw = new Date(blogData.date.replace(/-/g, '/'))
   const dateString = dateStringRaw.toLocaleDateString('en-US', {
     year: 'numeric',
     month: '2-digit',
