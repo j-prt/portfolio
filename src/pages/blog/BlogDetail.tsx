@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import { IoMdArrowBack } from 'react-icons/io'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { useBlogById } from '../../hooks/useBlogById'
+import { device } from '../../styles/media'
 
 const Back = styled.div`
   width: 100%;
@@ -14,9 +15,13 @@ const Back = styled.div`
   position: sticky;
   margin-left: 2rem;
   top: 8rem;
-
   font-size: 2rem;
   cursor: pointer;
+  display: none;
+
+  @media ${device.md} {
+    display: block;
+  }
 `
 
 const Content = styled.div`
@@ -56,7 +61,7 @@ function BlogDetail() {
                 })
                 .toUpperCase()}
             </DateLine>
-            <HeadingSimple>{blog.title}</HeadingSimple>
+            <HeadingSimple style={{ textAlign: 'center' }}>{blog.title}</HeadingSimple>
             <Content>
               {blog.body
                 .split('\n\n')
