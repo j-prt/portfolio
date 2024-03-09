@@ -32,9 +32,11 @@ const BrandBox = styled(FadeInElement)`
   margin: auto;
   grid-template-columns: 1fr 2fr;
   flex: 1 1 0;
+  transform: translateX(0.5rem);
 
   @media ${device.md} {
     grid-template-columns: 1fr 1fr 1fr;
+    transform: none;
   }
 `
 
