@@ -24,7 +24,10 @@ export async function getBlogs(): Promise<BlogData[]> {
 }
 
 export async function getOneBlog(id: number): Promise<BlogData> {
-  const { data: blogposts, error } = await supabase.from('blogposts').select().eq('id', id)
+  const { data: blogposts, error } = await supabase
+    .from('blogposts')
+    .select()
+    .eq('id', id)
 
   if (error) {
     console.log(error)
@@ -36,8 +39,6 @@ export async function getOneBlog(id: number): Promise<BlogData> {
 
 export async function postMessage(data: FieldValues): Promise<boolean> {
   const { error } = await supabase.from('portfolio_messages').insert([data])
-  console.log('inside send message')
-
   if (error) {
     console.log(error)
     throw new Error("Couldn't post message")

@@ -9,9 +9,8 @@ import { useBlogs } from '../../hooks/useBlogs'
 import Loader from '../../ui/Loader'
 
 function Blog() {
-  const { isLoading, blogs, error } = useBlogs()
+  const { isLoading, blogs } = useBlogs()
 
-  console.log(isLoading, error)
   return (
     <FullScreenBackground size='long' color='secondary'>
       <MainContainer>
@@ -19,7 +18,11 @@ function Blog() {
         <SubTitle>Some things I thought about</SubTitle>
         <Rule type='bold' />
         <ListContainer>
-          {isLoading ? <Loader /> : blogs?.map(blog => <BlogCard key={blog.id} blogData={blog} />)}
+          {isLoading ? (
+            <Loader />
+          ) : (
+            blogs?.map(blog => <BlogCard key={blog.id} blogData={blog} />)
+          )}
         </ListContainer>
       </MainContainer>
     </FullScreenBackground>

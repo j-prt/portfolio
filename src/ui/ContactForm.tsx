@@ -162,7 +162,6 @@ function ContactForm({ size }: SCFProps) {
   const disabledInput = isSending || formSuccess || formSuccess == false
 
   function onSubmit(data: FieldValues) {
-    console.log('pre sendmessage')
     sendMessage(data)
       .then(() => {
         setFormSuccess(true)
@@ -195,7 +194,8 @@ function ContactForm({ size }: SCFProps) {
           </>
         ) : (
           <p>
-            Your message has been sent! <br /> I&apos;ll get back to you as soon as possible.
+            Your message has been sent! <br /> I&apos;ll get back to you as soon
+            as possible.
           </p>
         )}
       </FormReplacement>
@@ -228,7 +228,9 @@ function ContactForm({ size }: SCFProps) {
         </FormRow>
       </AdjacentRows>
       <FormRow>
-        <Label $error={errors?.email}>Email&nbsp;{errors?.email && <IoAlertCircleOutline />}</Label>
+        <Label $error={errors?.email}>
+          Email&nbsp;{errors?.email && <IoAlertCircleOutline />}
+        </Label>
         <Input
           id='email'
           disabled={disabledInput}

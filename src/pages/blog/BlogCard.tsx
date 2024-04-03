@@ -55,7 +55,6 @@ const BlogIntro = styled.p`
 `
 
 function BlogCard({ blogData }: BlogCardProps) {
-  console.log(blogData.date)
   const dateStringRaw = new Date(blogData.date.replace(/-/g, '/'))
   const dateString = dateStringRaw.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -64,7 +63,10 @@ function BlogCard({ blogData }: BlogCardProps) {
   })
   return (
     <StyledBlogCard>
-      <DateSquare year={dateString.slice(-4)} monthday={dateString.slice(0, 5)} />
+      <DateSquare
+        year={dateString.slice(-4)}
+        monthday={dateString.slice(0, 5)}
+      />
       <Link to={`/blog/${blogData.id}`}>
         <BlogCardBox>
           <HeadingSimple>{blogData.title}</HeadingSimple>
